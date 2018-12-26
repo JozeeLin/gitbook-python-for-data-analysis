@@ -1,0 +1,957 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第10章时间序列 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ch11.html" />
+    
+    
+    <link rel="prev" href="ch09.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="ch02.html">
+            
+                <a href="ch02.html">
+            
+                    
+                    第2章Pandas DataFrame引言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="ch04.html">
+            
+                <a href="ch04.html">
+            
+                    
+                    第4章Numpy基础：数组和矢量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="ch05.html">
+            
+                <a href="ch05.html">
+            
+                    
+                    第5章Pandas 入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="ch06.html">
+            
+                <a href="ch06.html">
+            
+                    
+                    第6章数据加载、存储与文件格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="ch07.html">
+            
+                <a href="ch07.html">
+            
+                    
+                    第7章数据规整化/清理、转换、合并、重塑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="ch08.html">
+            
+                <a href="ch08.html">
+            
+                    
+                    第8章绘图和可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="ch09.html">
+            
+                <a href="ch09.html">
+            
+                    
+                    第9章数据聚合与分组运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="ch10.html">
+            
+                <a href="ch10.html">
+            
+                    
+                    第10章时间序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="ch11.html">
+            
+                <a href="ch11.html">
+            
+                    
+                    第11章金融和经济数据应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="ch12.html">
+            
+                <a href="ch12.html">
+            
+                    
+                    第12章NumPy高级应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="appendixA.html">
+            
+                <a href="appendixA.html">
+            
+                    
+                    附录A Python语言精要
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第10章时间序列</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;&#x5341;&#x7AE0;-&#x65F6;&#x95F4;&#x5E8F;&#x5217;">&#x7B2C;&#x5341;&#x7AE0; &#x65F6;&#x95F4;&#x5E8F;&#x5217;</h1>
+<p>[TOC]</p>
+<h2 id="&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53CA;&#x5DE5;&#x5177;">&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53CA;&#x5DE5;&#x5177;</h2>
+<p><strong>datetime&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;:</strong></p>
+<ul>
+<li>date&#x2014;&#x4EE5;&#x516C;&#x5386;&#x5F62;&#x5F0F;&#x5B58;&#x50A8;&#x65E5;&#x5386;&#x65E5;&#x671F;(&#x5E74;&#x3001;&#x6708;&#x3001;&#x65E5;)</li>
+<li>time&#x2014;&#x5C06;&#x65F6;&#x95F4;&#x5B58;&#x50A8;&#x4E3A;&#x65F6;&#x3001;&#x5206;&#x3001;&#x79D2;&#x3001;&#x6BEB;&#x79D2;</li>
+<li>datetime&#x2014;&#x5B58;&#x50A8;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;</li>
+<li>timedelta&#x2014;&#x8868;&#x793A;&#x4E24;&#x4E2A;datetime&#x503C;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;(&#x65E5;&#x3001;&#x79D2;&#x3001;&#x6BEB;&#x79D2;)</li>
+</ul>
+<pre><code class="lang-python">now = datetime.now()
+now.year,now.month,now.day
+delta = datetime(<span class="hljs-number">2011</span>,<span class="hljs-number">1</span>,<span class="hljs-number">7</span>) - datetime(<span class="hljs-number">2008</span>,<span class="hljs-number">6</span>,<span class="hljs-number">24</span>,<span class="hljs-number">8</span>,<span class="hljs-number">15</span>)
+delta.days
+delta.seconds
+start = datetime(<span class="hljs-number">2011</span>,<span class="hljs-number">1</span>,<span class="hljs-number">7</span>)
+start + timedelta(<span class="hljs-number">12</span>)
+</code></pre>
+<h3 id="&#x5B57;&#x7B26;&#x4E32;&#x548C;datetime&#x7684;&#x76F8;&#x4E92;&#x8F6C;&#x6362;">&#x5B57;&#x7B26;&#x4E32;&#x548C;datetime&#x7684;&#x76F8;&#x4E92;&#x8F6C;&#x6362;</h3>
+<blockquote>
+<p>&#x5229;&#x7528;str&#x6216;strftime&#x65B9;&#x6CD5;(&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x683C;&#x5F0F;&#x5316;&#x5B57;&#x7B26;&#x4E32;),datetime&#x5BF9;&#x8C61;&#x548C;pandas&#x7684;Timestamp&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x88AB;&#x683C;&#x5F0F;&#x5316;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+</blockquote>
+<p><strong>datetime&#x683C;&#x5F0F;&#x5B9A;&#x4E49;:</strong></p>
+<p>%Y&#x2014;4&#x4F4D;&#x6570;&#x7684;&#x5E74;</p>
+<p>%y&#x2014;2&#x4F4D;&#x6570;&#x7684;&#x5E74;</p>
+<p>%m&#x2014;2&#x4F4D;&#x6570;&#x7684;&#x6708;[01,02]</p>
+<p>%d&#x2014;2&#x4F4D;&#x6570;&#x7684;&#x65E5;[01,31]</p>
+<p>%H&#x2014;&#x65F6;(24&#x5C0F;&#x65F6;&#x5236;)[00,23]</p>
+<p>%I&#x2014;&#x65F6;(12&#x5C0F;&#x65F6;&#x5236;)[01,12]</p>
+<p>%M&#x2014;2&#x4F4D;&#x6570;&#x7684;&#x5206;[00,59]</p>
+<p>%S&#x2014;&#x79D2;[00,61] (&#x79D2;60&#x548C;61&#x7528;&#x4E8E;&#x95F0;&#x79D2;)</p>
+<p>%w&#x2014;&#x7528;&#x6574;&#x6570;&#x8868;&#x793A;&#x7684;&#x661F;&#x671F;&#x51E0;[0(&#x661F;&#x671F;&#x5929;)&#xFF0C;6]</p>
+<p>%U&#x2014;&#x6BCF;&#x5E74;&#x7684;&#x7B2C;&#x51E0;&#x5468;[00,53]&#x3002;&#x661F;&#x671F;&#x5929;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x6BCF;&#x5468;&#x7684;&#x7B2C;&#x4E00;&#x5929;&#xFF0C;&#x6BCF;&#x5E74;&#x7B2C;&#x4E00;&#x4E2A;&#x661F;&#x671F;&#x5929;&#x4E4B;&#x524D;&#x7684;&#x90A3;&#x51E0;&#x5929;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x201C;&#x7B2C;0&#x5468;&#x201D;</p>
+<p>%W&#x2014;&#x6BCF;&#x5E74;&#x7684;&#x7B2C;&#x51E0;&#x5468;[00,53]&#x3002;&#x661F;&#x671F;&#x4E00;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x6BCF;&#x5468;&#x7684;&#x7B2C;&#x4E00;&#x5929;&#xFF0C;&#x6BCF;&#x5E74;&#x7B2C;&#x4E00;&#x4E2A;&#x661F;&#x671F;&#x4E00;&#x4E4B;&#x524D;&#x7684;&#x90A3;&#x51E0;&#x5929;&#x88AB;&#x8BA4;&#x4E3A;&#x662F;&#x201C;&#x7B2C;0&#x5468;&#x201D;</p>
+<p>%z&#x2014;&#x4EE5;+HHMM&#x6216;-HHMM&#x8868;&#x793A;&#x7684;UTC&#x65F6;&#x533A;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x5982;&#x679C;&#x65F6;&#x533A;&#x4E3A;naive&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</p>
+<p>%F&#x2014;%Y-%m-%d&#x7B80;&#x5199;&#x5F62;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;2012-04-18</p>
+<p>%D&#x2014;%m/%d/%y&#x7B80;&#x5199;&#x5F62;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;04/18/12</p>
+<p><strong>&#x7279;&#x5B9A;&#x4E8E;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x7684;&#x65E5;&#x671F;&#x683C;&#x5F0F;:</strong></p>
+<p>%a&#x2014;&#x661F;&#x671F;&#x51E0;&#x7684;&#x7B80;&#x5199;</p>
+<p>%A&#x2014;&#x661F;&#x671F;&#x51E0;&#x7684;&#x5168;&#x79F0;</p>
+<p>%b&#x2014;&#x6708;&#x4EFD;&#x7684;&#x7B80;&#x5199;</p>
+<p>%B&#x2014;&#x6708;&#x4EFD;&#x7684;&#x5168;&#x79F0;</p>
+<p>%c&#x2014;&#x5B8C;&#x6574;&#x7684;&#x65E5;&#x671F;&#x548C;&#x65F6;&#x95F4;&#xFF0C;&#x4F8B;&#x5982;&#x201C;Tue 01 May 2012 04:40:57 PM&#x201D;</p>
+<p>%p&#x2014;&#x4E0D;&#x540C;&#x73AF;&#x5883;&#x4E2D;&#x7684;AM&#x6216;PM</p>
+<p>%x&#x2014;&#x9002;&#x5408;&#x4E8E;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x7684;&#x65E5;&#x671F;&#x683C;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x7F8E;&#x56FD;&#xFF0C;&#x201C;May 1,2012&quot;&#x4F1A;&#x4EA7;&#x751F;&#x201D;05/01/2012&#x201C;</p>
+<p>%X&#x2014;&#x9002;&#x5408;&#x4E8E;&#x5F53;&#x524D;&#x73AF;&#x5883;&#x7684;&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;&#x201D;04:24:12 PM&#x201C;</p>
+<pre><code class="lang-python">stamp = datetime(<span class="hljs-number">2011</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>)
+str(stamp)
+<span class="hljs-string">&apos;&apos;&apos;
+&apos;2011-01-03 00:00:00&apos;
+&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x628A;datetime&#x683C;&#x5F0F;&#x8F6C;&#x6210;&#x5B57;&#x7B26;&#x4E32;</span>
+stamp.strftime(<span class="hljs-string">&apos;%Y-%m-%d&apos;</span>)
+<span class="hljs-string">&apos;&apos;&apos;
+&apos;2011-01-03&apos;
+&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6210;datetime</span>
+value = <span class="hljs-string">&apos;2011-01-03&apos;</span>
+datetime.strptime(value, <span class="hljs-string">&apos;%Y-%m-%d&apos;</span>)
+<span class="hljs-string">&apos;&apos;&apos;
+datetime.datetime(2011, 1, 3, 0, 0)
+&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x6279;&#x91CF;&#x8F6C;&#x6210;datetime</span>
+datetime.datetime(<span class="hljs-number">2011</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+[datetime.strptime(x,<span class="hljs-string">&apos;%m/%d/%Y&apos;</span>) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> datestrs]
+
+<span class="hljs-comment">#&#x4F7F;&#x7528;dateutil.parser&#x628A;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6210;datetime</span>
+parse(<span class="hljs-string">&apos;2011-01-03&apos;</span>)
+parse(<span class="hljs-string">&apos;Jan 31, 1997 10:40 PM&apos;</span>)
+parse(<span class="hljs-string">&apos;6/12/2011&apos;</span>,dayfirst=<span class="hljs-keyword">True</span>)
+
+<span class="hljs-comment">#pandas.to_datetime</span>
+pd.to_datetime(datestrs)
+idx = pd.to_datetime(datestrs+[<span class="hljs-keyword">None</span>])
+</code></pre>
+<h2 id="&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x57FA;&#x7840;">&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x57FA;&#x7840;</h2>
+<pre><code class="lang-python"><span class="hljs-comment">#datetime&#x683C;&#x5F0F;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5F53;&#x4F5C;&#x7D22;&#x5F15;</span>
+dates = [datetime(<span class="hljs-number">2011</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>), datetime(<span class="hljs-number">2011</span>,<span class="hljs-number">1</span>,<span class="hljs-number">5</span>), datetime(<span class="hljs-number">2011</span>,<span class="hljs-number">1</span>,<span class="hljs-number">7</span>),
+        datetime(<span class="hljs-number">2011</span>,<span class="hljs-number">1</span>,<span class="hljs-number">8</span>),datetime(<span class="hljs-number">2011</span>,<span class="hljs-number">1</span>,<span class="hljs-number">10</span>),datetime(<span class="hljs-number">2011</span>,<span class="hljs-number">1</span>,<span class="hljs-number">12</span>)]
+ts = Series(np.random.randn(<span class="hljs-number">6</span>), index=dates)
+ts.index.dtype
+stamp = ts.index[<span class="hljs-number">0</span>]
+</code></pre>
+<h3 id="&#x7D22;&#x5F15;&#x3001;&#x9009;&#x53D6;&#x3001;&#x5B50;&#x96C6;&#x6784;&#x9020;">&#x7D22;&#x5F15;&#x3001;&#x9009;&#x53D6;&#x3001;&#x5B50;&#x96C6;&#x6784;&#x9020;</h3>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x4F7F;&#x7528;datetime&#x683C;&#x5F0F;&#x7D22;&#x5F15;</span>
+ts[<span class="hljs-string">&apos;1/10/2011&apos;</span>]
+ts[<span class="hljs-string">&apos;20110110&apos;</span>]
+<span class="hljs-comment">#&#x751F;&#x6210;datetime&#x7C7B;&#x578B;&#x7684;Series&#x6570;&#x636E;&#x96C6;</span>
+longer_ts = Series(np.random.randn(<span class="hljs-number">1000</span>), 
+                  index=pd.date_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>,periods=<span class="hljs-number">1000</span>))
+<span class="hljs-comment">#&#x6309;&#x5E74;&#x8BFB;&#x53D6;</span>
+longer_ts[<span class="hljs-string">&apos;2001&apos;</span>]
+<span class="hljs-comment">#&#x6309;&#x5E74;&#x3001;&#x6708;&#x8BFB;&#x53D6;</span>
+longer_ts[<span class="hljs-string">&apos;2001-05&apos;</span>]
+<span class="hljs-comment">#&#x5207;&#x7247;</span>
+ts[datetime(<span class="hljs-number">2011</span>,<span class="hljs-number">1</span>,<span class="hljs-number">7</span>):]
+ts[<span class="hljs-string">&apos;1/6/2011&apos;</span>:<span class="hljs-string">&apos;1/11/2011&apos;</span>]
+ts.truncate(after=<span class="hljs-string">&apos;1/9/2011&apos;</span>)
+<span class="hljs-comment">#&#x53E6;&#x4E00;&#x79CD;&#x8BFB;&#x53D6;&#x7684;&#x65B9;&#x5F0F;</span>
+dates = pd.date_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>,periods=<span class="hljs-number">100</span>, freq=<span class="hljs-string">&apos;W-WED&apos;</span>)
+long_df = DataFrame(np.random.randn(<span class="hljs-number">100</span>,<span class="hljs-number">4</span>),
+                   index=dates,
+                   columns=[<span class="hljs-string">&apos;Colorado&apos;</span>,<span class="hljs-string">&apos;Texas&apos;</span>,<span class="hljs-string">&apos;New York&apos;</span>,<span class="hljs-string">&apos;Ohio&apos;</span>])
+long_df.loc[<span class="hljs-string">&apos;5-2001&apos;</span>]
+</code></pre>
+<h3 id="&#x5E26;&#x6709;&#x91CD;&#x590D;&#x7D22;&#x5F15;&#x7684;&#x65F6;&#x95F4;&#x5E8F;&#x5217;">&#x5E26;&#x6709;&#x91CD;&#x590D;&#x7D22;&#x5F15;&#x7684;&#x65F6;&#x95F4;&#x5E8F;&#x5217;</h3>
+<pre><code class="lang-python">dates = pd.DatetimeIndex([<span class="hljs-string">&apos;1/1/2000&apos;</span>,<span class="hljs-string">&apos;1/2/2000&apos;</span>,<span class="hljs-string">&apos;1/2/2000&apos;</span>,
+                         <span class="hljs-string">&apos;1/2/2000&apos;</span>,<span class="hljs-string">&apos;1/3/2000&apos;</span>])
+dup_ts = Series(np.arange(<span class="hljs-number">5</span>),index=dates)
+dup_ts.index.is_unique
+dup_ts[<span class="hljs-string">&apos;1/3/2000&apos;</span>]
+dup_ts[<span class="hljs-string">&apos;1/2/2000&apos;</span>]
+grouped = dup_ts.groupby(level=<span class="hljs-number">0</span>)
+grouped.mean()
+grouped.count()
+</code></pre>
+<h2 id="&#x65E5;&#x671F;&#x7684;&#x8303;&#x56F4;&#x3001;&#x9891;&#x7387;&#x4EE5;&#x53CA;&#x79FB;&#x52A8;">&#x65E5;&#x671F;&#x7684;&#x8303;&#x56F4;&#x3001;&#x9891;&#x7387;&#x4EE5;&#x53CA;&#x79FB;&#x52A8;</h2>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x628A;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x8F6C;&#x6362;&#x4E3A;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x56FA;&#x5B9A;&#x9891;&#x7387;(&#x6BCF;&#x65E5;)&#x7684;&#x65F6;&#x95F4;&#x5E8F;&#x5217;</span>
+ts1 = ts.resample(<span class="hljs-string">&apos;D&apos;</span>)
+ts1.mean()
+</code></pre>
+<h3 id="&#x751F;&#x6210;&#x65E5;&#x671F;&#x8303;&#x56F4;">&#x751F;&#x6210;&#x65E5;&#x671F;&#x8303;&#x56F4;</h3>
+<blockquote>
+<p>&#x4F7F;&#x7528;pandas.date_range&#x751F;&#x6210;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x7684;DatetimeIndex&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x5355;&#x4F4D;&#x4E3A;&#x5929;&#xFF0C;&#x751F;&#x6210;4/1/2012&#x5230;6/1/2012&#x4E4B;&#x95F4;&#x6BCF;&#x5929;&#x7684;&#x65F6;&#x95F4;&#x5E8F;&#x5217;</span>
+index = pd.date_range(<span class="hljs-string">&apos;4/1/2012&apos;</span>,<span class="hljs-string">&apos;6/1/2012&apos;</span>)
+<span class="hljs-comment">#&#x4ECE;4/1/2012&#x5929;&#x8D77;&#xFF0C;20&#x5929;&#x5185;&#x7684;&#x65F6;&#x95F4;&#x5E8F;&#x5217;</span>
+pd.date_range(start=<span class="hljs-string">&apos;4/1/2012&apos;</span>,periods=<span class="hljs-number">20</span>)
+<span class="hljs-comment">#6/1/2012&#x524D;20&#x5929;</span>
+pd.date_range(end=<span class="hljs-string">&apos;6/1/2012&apos;</span>,periods=<span class="hljs-number">20</span>)
+
+<span class="hljs-comment">#&#x751F;&#x6210;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x6BB5;&#x5185;&#xFF0C;&#x6BCF;&#x6708;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x65E5;&#x7EC4;&#x6210;&#x7684;&#x65F6;&#x95F4;&#x5E8F;&#x5217;</span>
+pd.date_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>,<span class="hljs-string">&apos;12/1/2000&apos;</span>,freq=<span class="hljs-string">&apos;BM&apos;</span>) <span class="hljs-comment">#BM&#x8868;&#x793A;&#x6BCF;&#x4E2A;&#x6708;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x65E5;</span>
+<span class="hljs-comment">#&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x6233;&#x4FE1;&#x606F;</span>
+pd.date_range(<span class="hljs-string">&apos;5/2/2012 12:56:31&apos;</span>, periods=<span class="hljs-number">5</span>)
+<span class="hljs-comment">#&#x628A;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x6233;&#x4FE1;&#x606F;&#x89C4;&#x8303;&#x5316;&#x5230;&#x5348;&#x591C;&#x7684;&#x65F6;&#x95F4;&#x6233;</span>
+pd.date_range(<span class="hljs-string">&apos;5/2/2012 12:56:31&apos;</span>, periods=<span class="hljs-number">5</span>, normalize=<span class="hljs-keyword">True</span>)
+</code></pre>
+<h3 id="&#x9891;&#x7387;&#x548C;&#x65E5;&#x671F;&#x504F;&#x79FB;&#x91CF;">&#x9891;&#x7387;&#x548C;&#x65E5;&#x671F;&#x504F;&#x79FB;&#x91CF;</h3>
+<blockquote>
+<p>pandas&#x4E2D;&#x7684;&#x9891;&#x7387;&#x662F;&#x7531;&#x4E00;&#x4E2A;&#x57FA;&#x7840;&#x9891;&#x7387;&#x548C;&#x4E00;&#x4E2A;&#x4E58;&#x6570;&#x7EC4;&#x6210;&#x7684;&#x3002;&#x57FA;&#x7840;&#x9891;&#x7387;&#x901A;&#x5E38;&#x4EE5;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x522B;&#x540D;&#x8868;&#x793A;&#xFF0C;&#x6BD4;&#x5982;&apos;M&apos;&#x8868;&#x793A;&#x6BCF;&#x6708;&#xFF0C;&apos;H&apos;&#x8868;&#x793A;&#x6BCF;&#x5C0F;&#x65F6;&#x3002;&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x57FA;&#x7840;&#x9891;&#x7387;&#xFF0C;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x88AB;&#x79F0;&#x4E3A;&#x65E5;&#x671F;&#x504F;&#x79FB;&#x91CF;&#x7684;&#x5BF9;&#x8C61;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x3002;&#x4F8B;&#x5982;Hour&#x5BF9;&#x5E94;&#x5C0F;&#x65F6;&#xFF0C;Minute&#x5BF9;&#x5E94;&#x5206;&#x949F;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python">hour = Hour()
+hour = Hour(<span class="hljs-number">4</span>)
+<span class="hljs-comment">#&#x5728;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x6BB5;&#x91CC;&#xFF0C;&#x6309;&#x7167;&#x6BCF;4&#x5C0F;&#x65F6;&#x7684;&#x57FA;&#x7840;&#x9891;&#x7387;&#x751F;&#x6210;&#x65F6;&#x95F4;&#x5E8F;&#x5217;</span>
+pd.date_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>,<span class="hljs-string">&apos;1/3/2000 23:59&apos;</span>, freq=four_hours)
+pd.date_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>,<span class="hljs-string">&apos;1/3/2000 23:59&apos;</span>, freq=<span class="hljs-string">&apos;4h&apos;</span>) <span class="hljs-comment">#&#x7B49;&#x6548;&#x4E8E;&#x4E0A;&#x4E00;&#x53E5;</span>
+<span class="hljs-comment">#&#x57FA;&#x7840;&#x9891;&#x7387;&#x4E3A;150&#x5206;&#x949F;</span>
+Hour(<span class="hljs-number">2</span>)+Minute(<span class="hljs-number">30</span>)
+pd.date_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>,<span class="hljs-string">&apos;1/3/2000&apos;</span>, freq=Hour(<span class="hljs-number">2</span>)+Minute(<span class="hljs-number">30</span>))
+pd.date_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>,<span class="hljs-string">&apos;1/3/2000&apos;</span>,freq=<span class="hljs-string">&apos;2h30min&apos;</span>)
+<span class="hljs-comment">#WOM&#x65E5;&#x671F;&#xFF0C;&#x6BCF;&#x6708;&#x7B2C;3&#x4E2A;&#x661F;&#x671F;&#x4E94;</span>
+rng = pd.date_range(<span class="hljs-string">&apos;1/1/2012&apos;</span>,<span class="hljs-string">&apos;9/1/2012&apos;</span>,freq=<span class="hljs-string">&apos;WOM-3FRI&apos;</span>)
+</code></pre>
+<p><strong>&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x7684;&#x57FA;&#x7840;&#x9891;&#x7387;:</strong></p>
+<ul>
+<li>D&#x2014;Day&#x2014;&#x6BCF;&#x65E5;&#x5386;&#x65E5;</li>
+<li>B&#x2014;BusinessDay&#x2014;&#x6BCF;&#x5DE5;&#x4F5C;&#x65E5;</li>
+<li>H&#x2014;Hour&#x2014;&#x6BCF;&#x5C0F;&#x65F6;</li>
+<li>T&#x6216;min&#x2014;Minute&#x2014;&#x6BCF;&#x4EFD;</li>
+<li>S&#x2014;Second&#x2014;&#x6BCF;&#x79D2;</li>
+<li>L&#x6216;ms&#x2014;Milli&#x2014;&#x6BCF;&#x6BEB;&#x79D2;(&#x5373;&#x6BCF;&#x5343;&#x5206;&#x4E4B;&#x4E00;&#x79D2;)</li>
+<li>U&#x2014;Micro&#x2014;&#x6BCF;&#x5FAE;&#x5999;(&#x5373;&#x6BCF;&#x767E;&#x4E07;&#x5206;&#x4E4B;&#x4E00;&#x79D2;)</li>
+<li>M&#x2014;MonthEnd&#x2014;&#x6BCF;&#x6708;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x65E5;&#x5386;&#x65E5;</li>
+<li>BM&#x2014;BusinessMonthEnd&#x2014;&#x6BCF;&#x6708;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x65E5;</li>
+<li>MS&#x2014;MonthBegin&#x2014;&#x6BCF;&#x6708;&#x7B2C;&#x4E00;&#x4E2A;&#x65E5;&#x5386;&#x65E5;</li>
+<li>BMS&#x2014;BusinessMonthBegin&#x2014;&#x6BCF;&#x6708;&#x7B2C;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x65E5;</li>
+<li>W-MON&#x3001;W-TUE&#x2014;Week&#x2014;&#x4ECE;&#x6307;&#x5B9A;&#x7684;&#x661F;&#x671F;&#x51E0;(MON&#x3001;TUE&#x3001;WED&#x3001;THU&#x3001;FRI&#x3001;SAT&#x3001;SUN)&#x5F00;&#x59CB;&#x7B97;&#x8D77;&#xFF0C;&#x6BCF;&#x5468;</li>
+<li>WOM-1MON&#x3001;WOM-2MON...&#x2014;WeekOfMonth&#x2014;&#x4EA7;&#x751F;&#x6BCF;&#x6708;&#x7B2C;&#x4E00;&#x3001;&#x7B2C;&#x4E8C;&#x3001;&#x7B2C;&#x4E09;&#x6216;&#x7B2C;&#x56DB;&#x5468;&#x7684;&#x661F;&#x671F;&#x51E0;&#x3002;&#x4F8B;&#x5982;&#xFF0C;WOM-3FRI&#x8868;&#x793A;&#x6BCF;&#x6708;&#x7B2C;3&#x4E2A;&#x661F;&#x671F;&#x4E94;&#x3002;</li>
+<li>Q-JAN&#x3001;Q-FEB...&#x2014;QuarterEnd&#x2014;&#x5BF9;&#x4E8E;&#x4EE5;&#x6307;&#x5B9A;&#x6708;&#x4EFD;(JAN&#x3001;FEB&#x3001;MAR&#x3001;APR&#x3001;MAY&#x3001;JUN&#x3001;JUL&#x3001;AUG&#x3001;SEP&#x3001;OCT&#x3001;NOV&#x3001;DEC)&#x7ED3;&#x675F;&#x7684;&#x5E74;&#x5EA6;&#xFF0C;&#x6BCF;&#x5B63;&#x5EA6;&#x6700;&#x540E;&#x4E00;&#x6708;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x65E5;&#x5386;&#x65E5;&#x3002;</li>
+<li>BQ-JAN&#x3001;BQ-FEB...&#x2014;BusinessQuarterEnd&#x2014;&#x5BF9;&#x4E8E;&#x4EE5;&#x6307;&#x5B9A;&#x6708;&#x4EFD;&#x7ED3;&#x675F;&#x7684;&#x5E74;&#x5EA6;&#xFF0C;&#x6BCF;&#x5B63;&#x5EA6;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x65E5;&#x3002;</li>
+<li>QS-JAN&#x3001;QS-FEB...&#x2014;QuarterBegin&#x2014;&#x5BF9;&#x4E8E;&#x4EE5;&#x6307;&#x5B9A;&#x6708;&#x4EFD;&#x7ED3;&#x675F;&#x7684;&#x5E74;&#x5EA6;&#xFF0C;&#x6BCF;&#x5B63;&#x5EA6;&#x6700;&#x540E;&#x4E00;&#x6708;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x65E5;&#x5386;&#x65E5;</li>
+<li>BQS-JAN&#x3001;BQS-FEB...&#x2014;BusinessQuarterBegin&#x2014;&#x5BF9;&#x4E8E;&#x4EE5;&#x6307;&#x5B9A;&#x6708;&#x4EFD;&#x7ED3;&#x675F;&#x7684;&#x5E74;&#x5EA6;&#xFF0C;&#x6BCF;&#x5B63;&#x5EA6;&#x6700;&#x540E;&#x4E00;&#x6708;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x65E5;</li>
+<li>A-JAN&#x3001;A-FEB...&#x2014;YearEnd&#x2014;&#x6BCF;&#x5E74;&#x6307;&#x5B9A;&#x6708;&#x4EFD;(JAN&#x3001;FEB&#x3001;MAR&#x3001;APR&#x3001;MAY&#x3001;JUN&#x3001;JUL&#x3001;AUG&#x3001;SEP&#x3001;OCT&#x3001;NOV&#x3001;DEC)&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x65E5;&#x5386;&#x65E5;</li>
+<li>BA-JAN&#x3001;BA-FEB...&#x2014;BusinessYearEnd&#x2014;&#x6BCF;&#x5E74;&#x6307;&#x5B9A;&#x6708;&#x4EFD;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x65E5;</li>
+<li>AS-JAN&#x3001;AS-FEB...&#x2014;YearBegin&#x2014;&#x6BCF;&#x5E74;&#x6307;&#x5B9A;&#x6708;&#x4EFD;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x65E5;&#x5386;&#x65E5;</li>
+<li>BAS-JAN&#x3001;BAS-FEB...&#x2014;BesinessYearBegin&#x2014;&#x6BCF;&#x5E74;&#x6307;&#x5B9A;&#x6708;&#x4EFD;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5DE5;&#x4F5C;&#x65E5;</li>
+</ul>
+<h3 id="&#x79FB;&#x52A8;&#x8D85;&#x524D;&#x548C;&#x6EDE;&#x540E;&#x6570;&#x636E;">&#x79FB;&#x52A8;(&#x8D85;&#x524D;&#x548C;&#x6EDE;&#x540E;)&#x6570;&#x636E;</h3>
+<blockquote>
+<p>&#x79FB;&#x52A8;(Shift)&#x6307;&#x7684;&#x662F;&#x6CBF;&#x7740;&#x65F6;&#x95F4;&#x8F74;&#x5C06;&#x6570;&#x636E;&#x524D;&#x79FB;&#x6216;&#x540E;&#x79FB;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python">ts = Series(np.random.randn(<span class="hljs-number">4</span>), 
+            index=pd.date_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>,periods=<span class="hljs-number">4</span>,freq=<span class="hljs-string">&apos;M&apos;</span>))
+<span class="hljs-comment">#&#x4FDD;&#x6301;&#x7D22;&#x5F15;&#x4E0D;&#x53D8;&#xFF0C;&#x628A;&#x6570;&#x503C;&#x5411;&#x4E0B;&#x79FB;&#x52A8;&#x4E09;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x524D;&#x9762;&#x4E09;&#x4E2A;&#x4F4D;&#x7F6E;&#x4F9D;&#x6B21;&#x586B;&#x4E0A;NaN</span>
+ts.shift(<span class="hljs-number">3</span>)
+<span class="hljs-string">&apos;&apos;&apos;
+2000-01-31         NaN
+2000-02-29         NaN
+2000-03-31         NaN
+2000-04-30   -0.499752
+Freq: M, dtype: float64
+&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x4FDD;&#x6301;&#x7D22;&#x5F15;&#x4E0D;&#x53D8;&#xFF0C;&#x628A;&#x6570;&#x503C;&#x5411;&#x4E0A;&#x79FB;&#x52A8;&#x4E09;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x540E;&#x9762;3&#x4E2A;&#x4F4D;&#x7F6E;&#x4F9D;&#x6B21;&#x586B;&#x4E0A;NaN</span>
+ts.shift(<span class="hljs-number">-3</span>)
+<span class="hljs-string">&apos;&apos;&apos;
+2000-01-31   -1.083096
+2000-02-29         NaN
+2000-03-31         NaN
+2000-04-30         NaN
+Freq: M, dtype: float64
+&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x76F8;&#x90BB;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x7684;&#x6570;&#x503C;&#x767E;&#x5206;&#x6BD4;&#x53D8;&#x5316;&#x7387;</span>
+ts/ts.shift(<span class="hljs-number">1</span>)<span class="hljs-number">-1</span>
+<span class="hljs-comment">#&#x6307;&#x5B9A;&#x9891;&#x7387;&#xFF0C;&#x5BF9;&#x7D22;&#x5F15;&#x8FDB;&#x884C;&#x79FB;&#x52A8;&#xFF0C;&#x6570;&#x636E;&#x4E0D;&#x53D8;</span>
+ts.shift(<span class="hljs-number">2</span>, freq=<span class="hljs-string">&apos;M&apos;</span>) <span class="hljs-comment">#&#x6570;&#x636E;&#x4E0D;&#x53D8;&#xFF0C;&#x5728;&#x539F;&#x7D22;&#x5F15;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x6309;&#x7167;&#x6307;&#x5B9A;&#x7684;&#x9891;&#x7387;&#x66F4;&#x65B0;</span>
+<span class="hljs-string">&apos;&apos;&apos;
+2000-03-31   -0.499752
+2000-04-30    1.032136
+2000-05-31   -2.123721
+2000-06-30   -1.083096
+Freq: M, dtype: float64
+&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x540C;&#x6837;&#x7684;&#x6309;&#x7167;&#x9891;&#x7387;&#x79FB;&#x52A8;3D</span>
+ts.shift(<span class="hljs-number">3</span>,freq=<span class="hljs-string">&apos;D&apos;</span>)
+ts.shift(<span class="hljs-number">1</span>,freq=<span class="hljs-string">&apos;3D&apos;</span>)
+<span class="hljs-comment">#&#x5206;&#x949F;</span>
+ts.shift(<span class="hljs-number">1</span>,freq=<span class="hljs-string">&apos;90T&apos;</span>)
+<span class="hljs-comment">#&#x901A;&#x8FC7;&#x504F;&#x79FB;&#x91CF;&#x5BF9;&#x65E5;&#x671F;&#x8FDB;&#x884C;&#x4F4D;&#x79FB;</span>
+now = datetime(<span class="hljs-number">2011</span>,<span class="hljs-number">11</span>,<span class="hljs-number">17</span>)
+now+<span class="hljs-number">3</span>*Day()
+<span class="hljs-comment">#&#x5982;&#x679C;&#x52A0;&#x7684;&#x662F;&#x951A;&#x70B9;&#x504F;&#x79FB;&#x91CF;(&#x5982;MonthEnd)&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x589E;&#x91CF;&#x4F1A;&#x5C06;&#x539F;&#x65E5;&#x671F;&#x5411;&#x524D;&#x6EDA;&#x52A8;&#x5230;&#x7B26;&#x5408;&#x9891;&#x7387;&#x89C4;&#x5219;&#x7684;&#x4E0B;&#x4E00;&#x4E2A;&#x65E5;&#x671F;&#x3002;</span>
+now+MonthEnd()
+now+MonthEnd(<span class="hljs-number">2</span>)
+offset = MonthEnd()
+offset.rollforward(now)
+<span class="hljs-comment">#&#x901A;&#x8FC7;&#x951A;&#x70B9;&#x504F;&#x79FB;&#x91CF;&#x7684;rollforward&#x548C;rollback&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x663E;&#x793A;&#x7684;&#x5C06;&#x65E5;&#x671F;&#x5411;&#x524D;&#x6216;&#x5411;&#x540E;&quot;&#x6EDA;&#x52A8;&quot;</span>
+offset.rollback(now)
+ts = Series(np.random.randn(<span class="hljs-number">20</span>),
+           index=pd.date_range(<span class="hljs-string">&apos;1/15/2000&apos;</span>,periods=<span class="hljs-number">20</span>,freq=<span class="hljs-string">&apos;4d&apos;</span>))
+ts.groupby(offset.rollforward).mean()
+ts.resample(<span class="hljs-string">&apos;M&apos;</span>).mean()
+</code></pre>
+<h2 id="&#x65F6;&#x533A;&#x5904;&#x7406;">&#x65F6;&#x533A;&#x5904;&#x7406;</h2>
+<blockquote>
+<p>&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x5904;&#x7406;&#x5DE5;&#x4F5C;&#x6700;&#x9EBB;&#x70E6;&#x7684;&#x5C31;&#x662F;&#x65F6;&#x533A;&#x5904;&#x7406;&#x3002;&#x5C24;&#x5176;&#x662F;&#x590F;&#x4EE4;&#x65F6;&#x548C;&#x51AC;&#x4EE4;&#x65F6;&#x7684;&#x8F6C;&#x53D8;&#x3002;&#x8BB8;&#x591A;&#x4EBA;&#x9009;&#x62E9;&#x4EE5;&#x534F;&#x8C03;&#x4E16;&#x754C;&#x65F6;(UTC,&#x5B83;&#x662F;&#x683C;&#x6797;&#x5C3C;&#x6CBB;&#x6807;&#x51C6;&#x65F6;&#x95F4;&#x7684;&#x63A5;&#x66FF;&#x8005;&#xFF0C;&#x76EE;&#x524D;&#x662F;&#x56FD;&#x9645;&#x6807;&#x51C6;)&#x6765;&#x5904;&#x7406;&#x65F6;&#x95F4;&#x3002;&#x65F6;&#x533A;&#x662F;&#x4EE5;UTC&#x504F;&#x79FB;&#x91CF;&#x7684;&#x5F62;&#x5F0F;&#x8868;&#x793A;&#x7684;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x590F;&#x4EE4;&#x65F6;&#x671F;&#x95F4;&#xFF0C;&#x7EBD;&#x7EA6;&#x6BD4;UTC&#x6162;4&#x5C0F;&#x65F6;&#xFF0C;&#x800C;&#x5728;&#x5168;&#x5E74;&#x5176;&#x4ED6;&#x65F6;&#x95F4;&#x5219;&#x6BD4;UTC&#x6162;5&#x5C0F;&#x65F6;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x83B7;&#x53D6;&#x65F6;&#x533A;&#x540D;</span>
+pytz.common_timezones[<span class="hljs-number">-5</span>:] <span class="hljs-comment">#&#x5E38;&#x7528;&#x65F6;&#x533A;&#x540D;&#x7684;&#x540E;5&#x4E2A;</span>
+<span class="hljs-comment">#&#x901A;&#x8FC7;&#x65F6;&#x533A;&#x540D;&#x83B7;&#x53D6;&#x65F6;&#x533A;&#x5BF9;&#x8C61;</span>
+tz = pytz.timezone(<span class="hljs-string">&apos;US/Eastern&apos;</span>)
+</code></pre>
+<h3 id="&#x672C;&#x5730;&#x5316;&#x548C;&#x8F6C;&#x6362;">&#x672C;&#x5730;&#x5316;&#x548C;&#x8F6C;&#x6362;</h3>
+<blockquote>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;pandas&#x4E2D;&#x7684;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x662F;&#x5355;&#x7EAF;(naive)&#x7684;&#x65F6;&#x533A;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x5355;&#x7EAF;(naive)&#x65F6;&#x533A;</span>
+rng = pd.date_range(<span class="hljs-string">&apos;3/9/2012 9:30&apos;</span>, periods=<span class="hljs-number">6</span>, freq=<span class="hljs-string">&apos;D&apos;</span>)
+ts = Series(np.random.randn(len(rng)), index=rng)
+print(ts.index.tz)<span class="hljs-comment">#&#x65F6;&#x533A;&#x4FE1;&#x606F;&#x4E3A;None</span>
+<span class="hljs-comment">#&#x751F;&#x6210;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x65F6;&#x533A;&#x4FE1;&#x606F;</span>
+pd.date_range(<span class="hljs-string">&apos;3/9/2012 9:30&apos;</span>, periods=<span class="hljs-number">10</span>, freq=<span class="hljs-string">&apos;D&apos;</span>,tz=<span class="hljs-string">&apos;UTC&apos;</span>)
+<span class="hljs-comment">#&#x4ECE;&#x5355;&#x7EAF;&#x65F6;&#x533A;&#x5230;&#x672C;&#x5730;&#x5316;&#x7684;&#x8F6C;&#x6362;, &#x4F7F;&#x7528;tz_localize</span>
+ts_utc = ts.tz_localize(<span class="hljs-string">&apos;UTC&apos;</span>)
+ts_uts.index
+<span class="hljs-comment">#&#x88AB;&#x672C;&#x5730;&#x5316;&#x5230;&#x7279;&#x5B9A;&#x65F6;&#x533A;,&#x4F7F;&#x7528;tz_convert</span>
+ts_utc.tz_convert(<span class="hljs-string">&apos;US/Eastern&apos;</span>)
+
+<span class="hljs-comment">#&#x4ECE;&#x5355;&#x7EAF;&#x65F6;&#x533A;&#x8F6C;&#x6362;&#x5230;&#x7F8E;&#x56FD;&#x4E1C;&#x90E8;&#x65F6;&#x533A;</span>
+ts_eastern = ts.tz_localize(<span class="hljs-string">&apos;US/Eastern&apos;</span>)
+<span class="hljs-comment">#&#x7136;&#x540E;&#xFF0C;&#x8F6C;&#x6362;&#x4E3A;UTC&#x6216;&#x67CF;&#x6797;&#x65F6;&#x95F4;</span>
+ts_eastern.tz_convert(<span class="hljs-string">&apos;UTC&apos;</span>)
+ts_eastern.tz_convert(<span class="hljs-string">&apos;Europe/Berlin&apos;</span>)
+<span class="hljs-comment">#tz_localize&#x548C;tz_convert&#x4E5F;&#x662F;DatetimeIndex&#x7684;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</span>
+ts.index.tz_localize(<span class="hljs-string">&apos;Asia/Shanghai&apos;</span>)
+</code></pre>
+<h3 id="&#x64CD;&#x4F5C;&#x65F6;&#x533A;&#x610F;&#x8BC6;&#x578B;timestamp&#x5BF9;&#x8C61;">&#x64CD;&#x4F5C;&#x65F6;&#x533A;&#x610F;&#x8BC6;&#x578B;Timestamp&#x5BF9;&#x8C61;</h3>
+<blockquote>
+<p>Timestamp&#x5BF9;&#x8C61;&#x4E5F;&#x80FD;&#x4ECE;&#x5355;&#x7EAF;&#x578B;(naive)&#x672C;&#x5730;&#x5316;&#x4E3A;&#x65F6;&#x533A;&#x610F;&#x8BC6;&#x578B;(time zone-aware),&#x5E76;&#x4ECE;&#x4E00;&#x4E2A;&#x65F6;&#x533A;&#x8F6C;&#x6362;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;&#x65F6;&#x533A;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python">stamp = pd.Timestamp(<span class="hljs-string">&apos;2011-03-12 04:00&apos;</span>)
+<span class="hljs-comment">#&#x672C;&#x5730;&#x5316;&#x4E3A;&#x65F6;&#x533A;&#x610F;&#x8BC6;&#x578B;</span>
+stamp_utc = stamp.tz_localize(<span class="hljs-string">&apos;utc&apos;</span>)
+<span class="hljs-string">&apos;&apos;&apos;Timestamp(&apos;2011-03-12 04:00:00+0000&apos;, tz=&apos;UTC&apos;)&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x8F6C;&#x6362;&#x4E3A;&#x5176;&#x5B83;&#x65F6;&#x533A;</span>
+stamp_utc.tz_convert(<span class="hljs-string">&apos;US/Eastern&apos;</span>)
+<span class="hljs-string">&apos;&apos;&apos;Timestamp(&apos;2011-03-11 23:00:00-0500&apos;, tz=&apos;US/Eastern&apos;)&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x521B;&#x5EFA;timestamp&#x65F6;&#xFF0C;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x65F6;&#x533A;&#x4FE1;&#x606F;</span>
+stamp_moscow = pd.Timestamp(<span class="hljs-string">&apos;2011-03-12 04:00&apos;</span>, tz=<span class="hljs-string">&apos;Europe/Moscow&apos;</span>)
+<span class="hljs-string">&apos;&apos;&apos;Timestamp(&apos;2011-03-12 04:00:00+0300&apos;, tz=&apos;Europe/Moscow&apos;)&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x65F6;&#x533A;&#x610F;&#x8BC6;&#x578B;Timestamp&#x5BF9;&#x8C61;&#x5728;&#x5185;&#x90E8;&#x4FDD;&#x5B58;&#x4E86;&#x4E00;&#x4E2A;UTC&#x65F6;&#x95F4;&#x6233;&#x503C;(&#x81EA;1970&#x5E74;1&#x6708;1&#x65E5;&#x7B97;&#x8D77;&#x7684;&#x7EB3;&#x79D2;&#x6570;)&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x5728;&#x65F6;&#x533A;&#x8F6C;&#x6362;&#x4E2D;&#x4E0D;&#x53D1;&#x751F;&#x6539;&#x53D8;</span>
+stamp_utc.value
+<span class="hljs-string">&apos;&apos;&apos;1299902400000000000&apos;&apos;&apos;</span>
+stamp_utc.tz_convert(<span class="hljs-string">&apos;US/Eastern&apos;</span>).value
+<span class="hljs-string">&apos;&apos;&apos;1299902400000000000&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x4F7F;&#x7528;pandas.DateOffset&#x5BF9;&#x8C61;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x7B97;&#x672F;&#x8FD0;&#x7B97;&#x65F6;&#xFF0C;&#x8FD0;&#x7B97;&#x8FC7;&#x7A0B;&#x4F1A;&#x81EA;&#x52A8;&#x5173;&#x6CE8;&#x662F;&#x5426;&#x5B58;&#x5728;&#x590F;&#x4EE4;&#x65F6;&#x8F6C;&#x53D8;&#x671F;&#x3002;</span>
+<span class="hljs-comment">#&#x590F;&#x4EE4;&#x65F6;&#x8F6C;&#x53D8;&#x524D;30&#x5206;&#x949F;</span>
+stamp = pd.Timestamp(<span class="hljs-string">&apos;2012-03-12 01:30&apos;</span>, tz=<span class="hljs-string">&apos;US/Eastern&apos;</span>)
+stamp+Hour()
+<span class="hljs-comment">#&#x590F;&#x4EE4;&#x65F6;&#x8F6C;&#x53D8;&#x524D;90&#x5206;&#x949F;</span>
+stamp = pd.Timestamp(<span class="hljs-string">&apos;2012-11-04 00:30&apos;</span>, tz=<span class="hljs-string">&apos;US/Eastern&apos;</span>)
+stamp + <span class="hljs-number">2</span>*Hour()
+</code></pre>
+<h3 id="&#x4E0D;&#x540C;&#x65F6;&#x533A;&#x4E4B;&#x95F4;&#x7684;&#x8FD0;&#x7B97;">&#x4E0D;&#x540C;&#x65F6;&#x533A;&#x4E4B;&#x95F4;&#x7684;&#x8FD0;&#x7B97;</h3>
+<blockquote>
+<p>&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x7684;&#x65F6;&#x533A;&#x4E0D;&#x540C;&#xFF0C;&#x5728;&#x5C06;&#x5B83;&#x4EEC;&#x5408;&#x5E76;&#x5230;&#x4E00;&#x8D77;&#x65F6;&#xFF0C;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x5C31;&#x4F1A;&#x662F;UTC&#x3002;&#x7531;&#x4E8E;&#x65F6;&#x95F4;&#x6233;&#x662F;&#x4EE5;UTC&#x5B58;&#x50A8;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x4EFB;&#x4F55;&#x8F6C;&#x6362;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python">rng = pd.date_range(<span class="hljs-string">&apos;3/7/2012 9:30&apos;</span>,periods=<span class="hljs-number">10</span>,freq=<span class="hljs-string">&apos;B&apos;</span>)
+ts = Series(np.random.randn(len(rng)), index=rng)
+
+ts1 = ts[:<span class="hljs-number">7</span>].tz_localize(<span class="hljs-string">&apos;Europe/London&apos;</span>)
+ts2 = ts1[<span class="hljs-number">2</span>:].tz_convert(<span class="hljs-string">&apos;Europe/Moscow&apos;</span>)
+<span class="hljs-comment">#&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x662F;UTC</span>
+result = ts1+ts2
+result.index
+</code></pre>
+<h2 id="&#x65F6;&#x671F;&#x53CA;&#x5176;&#x7B97;&#x672F;&#x8FD0;&#x7B97;">&#x65F6;&#x671F;&#x53CA;&#x5176;&#x7B97;&#x672F;&#x8FD0;&#x7B97;</h2>
+<blockquote>
+<p>&#x65F6;&#x671F;(period)&#x8868;&#x793A;&#x7684;&#x662F;&#x65F6;&#x95F4;&#x533A;&#x95F4;&#xFF0C;&#x6BD4;&#x5982;&#x6570;&#x65E5;&#x3001;&#x6570;&#x6708;&#x3001;&#x6570;&#x5B63;&#x3001;&#x6570;&#x5E74;&#x7B49;&#x3002;Period&#x7C7B;&#x8868;&#x793A;&#x7684;&#x5C31;&#x662F;&#x8FD9;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x8868;&#x793A;&#x4ECE;2007&#x5E74;1&#x6708;1&#x65E5;&#x5230;2007&#x5E74;12&#x6708;31&#x65E5;&#x4E4B;&#x95F4;&#x7684;&#x6574;&#x6BB5;&#x65F6;&#x95F4;</span>
+p = pd.Period(<span class="hljs-number">2007</span>, freq=<span class="hljs-string">&apos;A-DEC&apos;</span>)
+<span class="hljs-string">&apos;&apos;&apos;Period(&apos;2007&apos;, &apos;A-DEC&apos;)&apos;&apos;&apos;</span>
+<span class="hljs-comment">#period&#x5BF9;&#x8C61;&#x52A0;&#x4E0A;&#x6216;&#x51CF;&#x53BB;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x5373;&#x53EF;&#x5BF9;&#x5E74;&#x4F4D;&#x79FB;</span>
+p+<span class="hljs-number">5</span>
+<span class="hljs-string">&apos;&apos;&apos;Period(&apos;2012&apos;, &apos;A-DEC&apos;)&apos;&apos;&apos;</span>
+p<span class="hljs-number">-2</span>
+<span class="hljs-string">&apos;&apos;&apos;Period(&apos;2005&apos;, &apos;A-DEC&apos;)&apos;&apos;&apos;</span>
+pd.Period(<span class="hljs-string">&apos;2014&apos;</span>,freq=<span class="hljs-string">&apos;A-DEC&apos;</span>) - p
+<span class="hljs-string">&apos;&apos;&apos;7&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x521B;&#x5EFA;&#x89C4;&#x5219;&#x7684;&#x65F6;&#x671F;&#x8303;&#x56F4;&#xFF0C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E3A;PeriodIndex</span>
+rng = pd.period_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>,<span class="hljs-string">&apos;6/30/2000&apos;</span>,freq=<span class="hljs-string">&apos;M&apos;</span>)
+<span class="hljs-comment">#&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x4F55;pandas&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E2D;&#x88AB;&#x7528;&#x505A;&#x8F74;&#x7D22;&#x5F15;</span>
+Series(np.random.randn(<span class="hljs-number">6</span>), index=rng)
+<span class="hljs-comment">#&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x4E00;&#x7EC4;&#x5B57;&#x7B26;&#x4E32;&#x6765;&#x6784;&#x9020;PeriodIndex</span>
+values = [<span class="hljs-string">&apos;2001Q3&apos;</span>,<span class="hljs-string">&apos;2002Q2&apos;</span>,<span class="hljs-string">&apos;2003Q1&apos;</span>]
+index = pd.PeriodIndex(values, freq=<span class="hljs-string">&apos;Q-DEC&apos;</span>)
+</code></pre>
+<h3 id="&#x65F6;&#x671F;&#x7684;&#x9891;&#x7387;&#x8F6C;&#x6362;">&#x65F6;&#x671F;&#x7684;&#x9891;&#x7387;&#x8F6C;&#x6362;</h3>
+<blockquote>
+<p>Period&#x548C;PeriodIndex&#x5BF9;&#x8C61;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;asfreq&#x65B9;&#x6CD5;&#x8F6C;&#x6362;&#x6210;&#x522B;&#x7684;&#x9891;&#x7387;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x628A;&#x5E74;&#x5EA6;&#x65F6;&#x671F;&#x8F6C;&#x6362;&#x4E3A;&#x5F53;&#x5E74;&#x5E74;&#x521D;&#x6216;&#x5E74;&#x672B;&#x7684;&#x4E00;&#x4E2A;&#x6708;&#x5EA6;&#x65F6;&#x671F;</span>
+
+<span class="hljs-comment">#end-start&#x521A;&#x597D;&#x4E00;&#x5E74;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;start&#x8D77;&#x59CB;&#x4E8E;&#x524D;&#x4E00;&#x5E74;&#x7684;JUN&#xFF0C;end&#x4E3A;&#x73B0;&#x5728;&#x8FD9;&#x4E00;&#x5E74;&#x7684;JUN</span>
+p = pd.Period(<span class="hljs-string">&apos;2007&apos;</span>, freq=<span class="hljs-string">&apos;A-DEC&apos;</span>)
+p.asfreq(<span class="hljs-string">&apos;M&apos;</span>,how=<span class="hljs-string">&apos;start&apos;</span>) <span class="hljs-comment">#&#x5E74;&#x521D;</span>
+<span class="hljs-string">&apos;&apos;&apos;Period(&apos;2007-01&apos;, &apos;M&apos;)&apos;&apos;&apos;</span>
+p.asfreq(<span class="hljs-string">&apos;M&apos;</span>,how=<span class="hljs-string">&apos;end&apos;</span>) <span class="hljs-comment">#&#x5E74;&#x672B;</span>
+<span class="hljs-string">&apos;&apos;&apos;Period(&apos;2007-12&apos;, &apos;M&apos;)&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x5C06;&#x9AD8;&#x9891;&#x7387;&#x8F6C;&#x6362;&#x4E3A;&#x4F4E;&#x9891;&#x7387;&#x662F;&#xFF0C;&#x8D85;&#x65F6;&#x671F;&#x662F;&#x7531;&#x5B50;&#x65F6;&#x671F;&#x6240;&#x5C5E;&#x7684;&#x4F4D;&#x7F6E;&#x51B3;&#x5B9A;&#x7684;&#x3002;</span>
+p = pd.Period(<span class="hljs-string">&apos;2007&apos;</span>,freq=<span class="hljs-string">&apos;A-JUN&apos;</span>)
+p.asfreq(<span class="hljs-string">&apos;M&apos;</span>,<span class="hljs-string">&apos;start&apos;</span>)
+<span class="hljs-string">&apos;&apos;&apos;Period(&apos;2006-07&apos;, &apos;M&apos;)&apos;&apos;&apos;</span>
+p.asfreq(<span class="hljs-string">&apos;M&apos;</span>, <span class="hljs-string">&apos;end&apos;</span>)
+<span class="hljs-string">&apos;&apos;&apos;Period(&apos;2007-06&apos;, &apos;M&apos;)&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x6839;&#x636E;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x63A8;&#x7406;&#x51FA;</span>
+p = pd.Period(<span class="hljs-string">&apos;2007-08&apos;</span>, <span class="hljs-string">&apos;M&apos;</span>)
+p.asfreq(<span class="hljs-string">&apos;A-JUN&apos;</span>)  <span class="hljs-comment">#&#x6BCF;&#x5E74;&#x4E2D;&#x7684;&#x7B2C;6&#x4E2A;&#x6708;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x4E00;&#x5E74;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x4E3A;p.asfreq(&apos;A-JUN&apos;).(&apos;M&apos;,&apos;start&apos;)</span>
+<span class="hljs-string">&apos;&apos;&apos;Period(&apos;2008&apos;, &apos;A-JUN&apos;)&apos;&apos;&apos;</span>
+rng = pd.period_range(<span class="hljs-string">&apos;2006&apos;</span>, <span class="hljs-string">&apos;2009&apos;</span>, freq=<span class="hljs-string">&apos;A-DEC&apos;</span>)
+ts = Series(np.random.randn(len(rng)), index=rng)
+ts.asfreq(<span class="hljs-string">&apos;M&apos;</span>, how=<span class="hljs-string">&apos;start&apos;</span>)
+ts.asfreq(<span class="hljs-string">&apos;B&apos;</span>,how=<span class="hljs-string">&apos;end&apos;</span>)
+</code></pre>
+<h3 id="&#x6309;&#x5B63;&#x5EA6;&#x8BA1;&#x7B97;&#x7684;&#x65F6;&#x671F;&#x9891;&#x7387;">&#x6309;&#x5B63;&#x5EA6;&#x8BA1;&#x7B97;&#x7684;&#x65F6;&#x671F;&#x9891;&#x7387;</h3>
+<blockquote>
+<p>&#x5B63;&#x5EA6;&#x578B;&#x6570;&#x636E;&#x5728;&#x4F1A;&#x8BA1;&#x3001;&#x91D1;&#x878D;&#x7B49;&#x9886;&#x57DF;&#x4E2D;&#x5F88;&#x5E38;&#x89C1;&#x3002;&#x8BB8;&#x591A;&#x5B63;&#x5EA6;&#x578B;&#x6570;&#x636E;&#x90FD;&#x4F1A;&#x6D89;&#x53CA;&quot;&#x8D22;&#x5E74;&#x672B;&quot;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x4E00;&#x5E74;12&#x4E2A;&#x6708;&#x4E2D;&#x67D0;&#x6708;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x65E5;&#x5386;&#x65E5;&#x6216;&#x5DE5;&#x4F5C;&#x65E5;&#x3002;pandas&#x652F;&#x6301;12&#x79CD;&#x53EF;&#x80FD;&#x7684;&#x5B63;&#x5EA6;&#x578B;&#x9891;&#x7387;&#xFF0C;&#x5373;Q-JAN&#x5230;Q-DEC&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python">p = pd.Period(<span class="hljs-string">&apos;2012Q4&apos;</span>,freq=<span class="hljs-string">&apos;Q-JAN&apos;</span>)
+<span class="hljs-comment">#&#x4EE5;1&#x6708;&#x7ED3;&#x675F;&#x7684;&#x8D22;&#x5E74;&#x4E2D;&#xFF0C;2012Q4&#x662F;&#x4ECE;11&#x6708;&#x5230;1&#x6708;</span>
+p.asfreq(<span class="hljs-string">&apos;D&apos;</span>,<span class="hljs-string">&apos;start&apos;</span>)
+<span class="hljs-string">&apos;&apos;&apos;Period(&apos;2011-11-01&apos;, &apos;D&apos;)&apos;&apos;&apos;</span>
+p.asfreq(<span class="hljs-string">&apos;D&apos;</span>,<span class="hljs-string">&apos;end&apos;</span>)
+<span class="hljs-string">&apos;&apos;&apos;Period(&apos;2012-01-31&apos;, &apos;D&apos;)&apos;&apos;&apos;</span>
+<span class="hljs-comment">#&#x83B7;&#x53D6;&#x8BE5;&#x5B63;&#x5EA6;&#x5012;&#x6570;&#x7B2C;&#x4E8C;&#x4E2A;&#x5DE5;&#x4F5C;&#x65E5;&#x4E0B;&#x5348;4&#x70B9;&#x7684;&#x65F6;&#x95F4;&#x6233;</span>
+p4pm = (p.asfreq(<span class="hljs-string">&apos;B&apos;</span>,<span class="hljs-string">&apos;e&apos;</span>)<span class="hljs-number">-1</span>).asfreq(<span class="hljs-string">&apos;T&apos;</span>,<span class="hljs-string">&apos;s&apos;</span>)+<span class="hljs-number">16</span>*<span class="hljs-number">60</span>
+p4pm.to_timestamp()
+<span class="hljs-comment">#&#x751F;&#x6210;&#x5B63;&#x5EA6;&#x578B;&#x8303;&#x56F4;</span>
+rng = pd.period_range(<span class="hljs-string">&apos;2011Q3&apos;</span>,<span class="hljs-string">&apos;2012Q4&apos;</span>,freq=<span class="hljs-string">&apos;Q-JAN&apos;</span>)
+ts = Series(np.arange(len(rng)), index=rng)
+<span class="hljs-string">&apos;&apos;&apos;
+2011Q3    0
+2011Q4    1
+2012Q1    2
+2012Q2    3
+2012Q3    4
+2012Q4    5
+Freq: Q-JAN, dtype: int64
+&apos;&apos;&apos;</span>
+new_rng = (rng.asfreq(<span class="hljs-string">&apos;B&apos;</span>,<span class="hljs-string">&apos;e&apos;</span>)<span class="hljs-number">-1</span>).asfreq(<span class="hljs-string">&apos;T&apos;</span>,<span class="hljs-string">&apos;s&apos;</span>)+<span class="hljs-number">16</span>*<span class="hljs-number">60</span>
+ts.index=new_rng.to_timestamp()
+<span class="hljs-string">&apos;&apos;&apos;
+2010-10-28 16:00:00    0
+2011-01-28 16:00:00    1
+2011-04-28 16:00:00    2
+2011-07-28 16:00:00    3
+2011-10-28 16:00:00    4
+2012-01-30 16:00:00    5
+dtype: int64
+&apos;&apos;&apos;</span>
+</code></pre>
+<h3 id="&#x5C06;timestamp&#x8F6C;&#x6362;&#x4E3A;period&#x53CA;&#x5176;&#x53CD;&#x5411;&#x8FC7;&#x7A0B;">&#x5C06;Timestamp&#x8F6C;&#x6362;&#x4E3A;Period(&#x53CA;&#x5176;&#x53CD;&#x5411;&#x8FC7;&#x7A0B;)</h3>
+<blockquote>
+<p>&#x901A;&#x8FC7;&#x4F7F;&#x7528;to_period&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x7531;&#x65F6;&#x95F4;&#x6233;&#x7D22;&#x5F15;&#x7684;Series&#x548C;DataFrame&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x4EE5;&#x65F6;&#x671F;&#x7D22;&#x5F15;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python">rng = pd.date_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>,periods=<span class="hljs-number">3</span>, freq=<span class="hljs-string">&apos;M&apos;</span>)
+ts = Series(np.random.randn(<span class="hljs-number">3</span>), index=rng)
+pts = ts.to_period()
+<span class="hljs-comment">#&#x65F6;&#x671F;&#x6307;&#x7684;&#x662F;&#x975E;&#x91CD;&#x53E0;&#x65F6;&#x95F4;&#x533A;&#x95F4;&#xFF0C;&#x5BF9;&#x4E8E;&#x7ED9;&#x5B9A;&#x7684;&#x9891;&#x7387;&#xFF0C;&#x4E00;&#x4E2A;&#x65F6;&#x95F4;&#x6233;&#x53EA;&#x80FD;&#x5C5E;&#x4E8E;&#x4E00;&#x4E2A;&#x65F6;&#x671F;&#x3002;</span>
+rng = pd.date_range(<span class="hljs-string">&apos;1/29/2000&apos;</span>, periods=<span class="hljs-number">6</span>, freq=<span class="hljs-string">&apos;D&apos;</span>)
+ts2 = Series(np.random.randn(<span class="hljs-number">6</span>), index=rng)
+ts2.to_period(<span class="hljs-string">&apos;M&apos;</span>)
+
+<span class="hljs-comment">#&#x8F6C;&#x6362;&#x4E3A;&#x65F6;&#x95F4;&#x6233;</span>
+pts = ts.to_period()
+pts.to_timestamp(how=<span class="hljs-string">&apos;end&apos;</span>)
+</code></pre>
+<h3 id="&#x901A;&#x8FC7;&#x6570;&#x7EC4;&#x521B;&#x5EFA;periodindex">&#x901A;&#x8FC7;&#x6570;&#x7EC4;&#x521B;&#x5EFA;PeriodIndex</h3>
+<blockquote>
+<p>&#x56FA;&#x5B9A;&#x9891;&#x7387;&#x7684;&#x6570;&#x636E;&#x96C6;&#x901A;&#x5E38;&#x4F1A;&#x5C06;&#x65F6;&#x95F4;&#x4FE1;&#x606F;&#x5206;&#x5F00;&#x5B58;&#x653E;&#x5728;&#x591A;&#x4E2A;&#x5217;&#x4E2D;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python">data = pd.read_csv(<span class="hljs-string">&apos;ch08/macrodata.csv&apos;</span>)
+data.year
+data.quarter
+<span class="hljs-comment">#&#x5C06;&#x4EE5;&#x4E0A;&#x4E24;&#x4E2A;&#x6570;&#x7EC4;&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;&#x9891;&#x7387;&#x4F20;&#x5165;PeriodIndex&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x4EEC;&#x5408;&#x5E76;&#x6210;DataFrame&#x7684;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;</span>
+index = pd.PeriodIndex(year=data.year,quarter=data.quarter,freq=<span class="hljs-string">&apos;Q-DEC&apos;</span>)
+data.index=index
+</code></pre>
+<h2 id="&#x91CD;&#x91C7;&#x6837;&#x53CA;&#x9891;&#x7387;&#x8F6C;&#x6362;">&#x91CD;&#x91C7;&#x6837;&#x53CA;&#x9891;&#x7387;&#x8F6C;&#x6362;</h2>
+<blockquote>
+<p>&#x91CD;&#x91C7;&#x6837;&#x6307;&#x7684;&#x662F;&#x5C06;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x4ECE;&#x4E00;&#x4E2A;&#x9891;&#x7387;&#x8F6C;&#x6362;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x9891;&#x7387;&#x7684;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#x3002;&#x9AD8;&#x9891;&#x7387;&#x6570;&#x636E;&#x805A;&#x5408;&#x5230;&#x4F4E;&#x9891;&#x7387;&#x79F0;&#x4E3A;&#x964D;&#x91C7;&#x6837;&#x3002;&#x5C06;&#x4F4E;&#x9891;&#x7387;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x5230;&#x9AD8;&#x9891;&#x7387;&#x79F0;&#x4E3A;&#x5347;&#x91C7;&#x6837;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python">rng = pd.date_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>, periods=<span class="hljs-number">100</span>, freq=<span class="hljs-string">&apos;D&apos;</span>)
+ts = Series(np.random.randn(len(rng)), index=rng)
+ts.resample(<span class="hljs-string">&apos;M&apos;</span>).mean()
+ts.resample(<span class="hljs-string">&apos;M&apos;</span>,kind=<span class="hljs-string">&apos;period&apos;</span>).mean()
+</code></pre>
+<p><strong>resample&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#xFF1A;</strong></p>
+<ul>
+<li>freq&#x2014;&#x8868;&#x793A;&#x91CD;&#x91C7;&#x6837;&#x9891;&#x7387;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6216;DateOffset&#xFF0C;&#x4F8B;&#x5982;&apos;M&apos;&#x3001;&apos;5min&apos;&#x6216;Second(15)</li>
+<li>axis=0&#x2014;&#x2014;&#x91CD;&#x91C7;&#x6837;&#x7684;&#x8F74;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;0</li>
+<li>fill_method=None&#x2014;&#x2014;&#x5347;&#x91C7;&#x6837;&#x65F6;&#x5982;&#x4F55;&#x63D2;&#x503C;&#xFF0C;&#x6BD4;&#x5982;&apos;ffill&apos;&#x6216;&apos;bfill&apos;&#x3002;&#x9ED8;&#x8BA4;&#x4E0D;&#x63D2;&#x503C;&#x3002;</li>
+<li>closed=&apos;right&apos;&#x2014;&#x2014;&#x5728;&#x964D;&#x91C7;&#x6837;&#x4E2D;&#xFF0C;&#x5404;&#x65F6;&#x95F4;&#x6BB5;&#x7684;&#x54EA;&#x4E00;&#x7AEF;&#x662F;&#x95ED;&#x5408;(&#x5373;&#x5305;&#x542B;)&#x7684;&#xFF0C;&apos;right&apos;&#x6216;&apos;left&apos;&#x3002;&#x9ED8;&#x8BA4;&#x4E3A;&apos;right&apos;</li>
+<li>label=&#x2019;right&apos;&#x2014;&#x2014;&#x5728;&#x964D;&#x91C7;&#x6837;&#x4E2D;&#xFF0C;&#x5982;&#x4F55;&#x8BBE;&#x7F6E;&#x805A;&#x5408;&#x503C;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&apos;right&apos;&#x6216;&#x2018;left&apos;(&#x9762;&#x5143;&#x7684;&#x53F3;&#x8FB9;&#x754C;&#x6216;&#x5DE6;&#x8FB9;&#x754C;)&#x3002;&#x4F8B;&#x5982;&#xFF0C;9:30&#x5230;9:35&#x4E4B;&#x95F4;&#x7684;&#x8FD9;5&#x5206;&#x949F;&#x4F1A;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;9:30&#x6216;9:35&#x3002;&#x9ED8;&#x8BA4;&#x4E3A;&apos;right&apos;(&#x672C;&#x4F8B;&#x4E2D;&#x5C31;&#x662F;9:35)</li>
+<li>loffset=None&#x2014;&#x2014;&#x9762;&#x5143;&#x6807;&#x7B7E;&#x7684;&#x65F6;&#x95F4;&#x6821;&#x6B63;&#x503C;&#xFF0C;&#x6BD4;&#x5982;&apos;-1s&apos;/Second(-1)&#x7528;&#x4E8E;&#x5C06;&#x805A;&#x5408;&#x6807;&#x7B7E;&#x8C03;&#x65E9;1&#x79D2;</li>
+<li>limit=None&#x2014;&#x2014;&#x5728;&#x524D;&#x5411;&#x6216;&#x540E;&#x5411;&#x586B;&#x5145;&#x65F6;&#xFF0C;&#x5141;&#x8BB8;&#x586B;&#x5145;&#x7684;&#x6700;&#x5927;&#x65F6;&#x671F;&#x6570;</li>
+<li>kind=None&#x2014;&#x2014;&#x805A;&#x5408;&#x5230;&#x65F6;&#x671F;(&apos;period&apos;)&#x6216;&#x65F6;&#x95F4;&#x6233;(&apos;timestamp&apos;)&#xFF0C;&#x9ED8;&#x8BA4;&#x805A;&#x5408;&#x5230;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x7684;&#x7D22;&#x5F15;&#x7C7B;&#x578B;</li>
+<li>convention=None&#x2014;&#x2014;&#x5F53;&#x91CD;&#x91C7;&#x6837;&#x65F6;&#x671F;&#x65F6;&#xFF0C;&#x5C06;&#x4F4E;&#x9891;&#x7387;&#x8F6C;&#x6362;&#x5230;&#x9AD8;&#x9891;&#x7387;&#x6240;&#x91C7;&#x7528;&#x7684;&#x7EA6;&#x5B9A;(&apos;start&apos;&#x6216;&apos;end&apos;)&#x3002;&#x9ED8;&#x8BA4;&#x4E3A;&apos;end&apos;</li>
+</ul>
+<h3 id="&#x964D;&#x91C7;&#x6837;">&#x964D;&#x91C7;&#x6837;</h3>
+<blockquote>
+<p>&#x5C06;&#x6570;&#x636E;&#x805A;&#x5408;&#x5230;&#x89C4;&#x6574;&#x7684;&#x4F4E;&#x9891;&#x7387;&#x662F;&#x4E00;&#x4EF6;&#x975E;&#x5E38;&#x666E;&#x901A;&#x7684;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x5904;&#x7406;&#x4EFB;&#x52A1;&#x3002;&#x8FDB;&#x884C;&#x964D;&#x91C7;&#x6837;&#x65F6;&#x9700;&#x8981;&#x8003;&#x8651;2&#x6837;&#x4E1C;&#x897F;&#x3002;</p>
+<ul>
+<li>&#x5404;&#x533A;&#x95F4;&#x54EA;&#x8FB9;&#x662F;&#x95ED;&#x5408;&#x7684;&#x3002;</li>
+<li>&#x5982;&#x4F55;&#x6807;&#x8BB0;&#x5404;&#x4E2A;&#x805A;&#x5408;&#x9762;&#x5143;&#xFF0C;&#x7528;&#x533A;&#x95F4;&#x7684;&#x5F00;&#x5934;&#x8FD8;&#x662F;&#x672B;&#x5C3E;&#x3002;</li>
+</ul>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x9891;&#x7387;&#x4E3A;&#x6BCF;&#x5206;&#x949F;</span>
+rng = pd.date_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>,periods=<span class="hljs-number">12</span>,freq=<span class="hljs-string">&apos;T&apos;</span>)
+ts = Series(np.arange(<span class="hljs-number">12</span>), index=rng)
+<span class="hljs-comment">#&#x901A;&#x8FC7;&#x6C42;&#x548C;&#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x6570;&#x636E;&#x805A;&#x5408;&#x5230;&quot;5&#x5206;&#x949F;&quot;&#x7684;&#x5757;&#x4E2D;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x5DE6;&#x5F00;&#x53F3;&#x95ED;&#x7684;&#x533A;&#x95F4;&#xFF0C;&#x9ED8;&#x8BA4;&#x7528;&#x5F00;&#x533A;&#x95F4;&#x90A3;&#x7AEF;&#x4F5C;&#x4E3A;&#x6807;&#x7B7E;</span>
+ts.resample(<span class="hljs-string">&apos;5min&apos;</span>).sum()
+<span class="hljs-comment">#&#x8BBE;&#x5B9A;&#x533A;&#x95F4;&#x4E3A;&#x5DE6;&#x95ED;&#x53F3;&#x5F00;</span>
+ts.resample(<span class="hljs-string">&apos;5min&apos;</span>,closed=<span class="hljs-string">&apos;left&apos;</span>).sum()
+<span class="hljs-comment">#&#x6307;&#x5B9A;&#x6807;&#x7B7E;&#x4E3A;&#x5DE6;&#x533A;&#x95F4;</span>
+ts.resample(<span class="hljs-string">&apos;5min&apos;</span>,closed=<span class="hljs-string">&apos;left&apos;</span>,label=<span class="hljs-string">&apos;left&apos;</span>).sum()
+<span class="hljs-comment">#&#x4ECE;&#x53F3;&#x8FB9;&#x754C;&#x51CF;&#x53BB;&#x4E00;&#x79D2;&#x4EE5;&#x4FBF;&#x66F4;&#x5BB9;&#x6613;&#x660E;&#x767D;&#x8BE5;&#x65F6;&#x95F4;&#x6233;&#x5230;&#x5E95;&#x8868;&#x793A;&#x7684;&#x662F;&#x54EA;&#x4E2A;&#x533A;&#x95F4;&#x3002;</span>
+ts.resample(<span class="hljs-string">&apos;5min&apos;</span>, loffset=<span class="hljs-string">&apos;-1s&apos;</span>).sum()
+<span class="hljs-comment">#OHLC&#x91CD;&#x91C7;&#x6837;&#xFF0C;&#x5F00;&#x76D8;&#xFF0C;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x6700;&#x5C0F;&#x503C;&#xFF0C;&#x6536;&#x76D8;</span>
+ts.resample(<span class="hljs-string">&apos;5min&apos;</span>).ohlc()
+<span class="hljs-comment">#&#x901A;&#x8FC7;groupby&#x8FDB;&#x884C;&#x91CD;&#x91C7;&#x6837;</span>
+rng=pd.date_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>,periods=<span class="hljs-number">100</span>,freq=<span class="hljs-string">&apos;D&apos;</span>)
+ts = Series(np.arange(<span class="hljs-number">100</span>), index=rng)
+ts.groupby(<span class="hljs-keyword">lambda</span> x:x.month).mean()
+ts.groupby(<span class="hljs-keyword">lambda</span> x:x.weekday).mean()
+</code></pre>
+<h3 id="&#x5347;&#x91C7;&#x6837;&#x548C;&#x63D2;&#x503C;">&#x5347;&#x91C7;&#x6837;&#x548C;&#x63D2;&#x503C;</h3>
+<blockquote>
+<p>&#x5C06;&#x6570;&#x636E;&#x4ECE;&#x4F4E;&#x9891;&#x7387;&#x8F6C;&#x6362;&#x5230;&#x9AD8;&#x9891;&#x7387;&#x65F6;&#xFF0C;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x805A;&#x5408;&#x4E86;</p>
+</blockquote>
+<pre><code class="lang-python">frame = DataFrame(np.random.randn(<span class="hljs-number">2</span>,<span class="hljs-number">4</span>),
+                 index=pd.date_range(<span class="hljs-string">&apos;1/1/2000&apos;</span>,periods=<span class="hljs-number">2</span>,freq=<span class="hljs-string">&apos;W-WED&apos;</span>),
+                 columns=[<span class="hljs-string">&apos;Colorado&apos;</span>,<span class="hljs-string">&apos;Texas&apos;</span>,<span class="hljs-string">&apos;New York&apos;</span>,<span class="hljs-string">&apos;Ohio&apos;</span>])
+frame[:<span class="hljs-number">5</span>]
+<span class="hljs-comment">#&#x5C06;&#x5176;&#x91CD;&#x91C7;&#x6837;&#x5230;&#x65E5;&#x9891;&#x7387;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F1A;&#x5F15;&#x5165;&#x7F3A;&#x5931;&#x503C;</span>
+df_daily = frame.resample(<span class="hljs-string">&apos;D&apos;</span>)
+df_daily.mean()
+<span class="hljs-comment">#&#x586B;&#x5145;NaN</span>
+frame.resample(<span class="hljs-string">&apos;D&apos;</span>).ffill()
+<span class="hljs-comment">#&#x9650;&#x5B9A;&#x586B;&#x5145;&#x65F6;&#x671F;&#x6570;</span>
+frame.resample(<span class="hljs-string">&apos;D&apos;</span>,limit=<span class="hljs-number">2</span>).ffill()
+frame.resample(<span class="hljs-string">&apos;W-THU&apos;</span>).ffill()
+</code></pre>
+<h3 id="&#x901A;&#x8FC7;&#x65F6;&#x671F;&#x8FDB;&#x884C;&#x91CD;&#x91C7;&#x6837;">&#x901A;&#x8FC7;&#x65F6;&#x671F;&#x8FDB;&#x884C;&#x91CD;&#x91C7;&#x6837;</h3>
+<pre><code class="lang-python">frame = DataFrame(np.random.randn(<span class="hljs-number">24</span>,<span class="hljs-number">4</span>),
+                 index=pd.period_range(<span class="hljs-string">&apos;1-2000&apos;</span>,<span class="hljs-string">&apos;12-2001&apos;</span>,freq=<span class="hljs-string">&apos;M&apos;</span>),
+                 columns=[<span class="hljs-string">&apos;Colorado&apos;</span>,<span class="hljs-string">&apos;Texas&apos;</span>,<span class="hljs-string">&apos;New York&apos;</span>,<span class="hljs-string">&apos;Ohio&apos;</span>])
+annual_frame = frame.resample(<span class="hljs-string">&apos;A-DEC&apos;</span>).mean()
+annual_frame.resample(<span class="hljs-string">&apos;Q-DEC&apos;</span>).ffill()
+annual_frame.resample(<span class="hljs-string">&apos;Q-DEC&apos;</span>,convention=<span class="hljs-string">&apos;start&apos;</span>).ffill()
+annual_frame.resample(<span class="hljs-string">&apos;Q-MAR&apos;</span>).ffill()
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;&#x4E8B;&#x9879;:</strong></p>
+<ul>
+<li>&#x5728;&#x964D;&#x91C7;&#x6837;&#x4E2D;&#xFF0C;&#x76EE;&#x6807;&#x9891;&#x7387;&#x5FC5;&#x987B;&#x662F;&#x6E90;&#x9891;&#x7387;&#x7684;&#x5B50;&#x65F6;&#x671F;(subperiod)</li>
+<li>&#x5728;&#x5347;&#x91C7;&#x6837;&#x4E2D;&#xFF0C;&#x76EE;&#x6807;&#x9891;&#x7387;&#x5FC5;&#x987B;&#x662F;&#x6E90;&#x9891;&#x7387;&#x7684;&#x8D85;&#x5B50;&#x671F;(superperiod)</li>
+<li>&#x6BD4;&#x5982;&#xFF0C;&#x7531;Q-MAR&#x5B9A;&#x4E49;&#x7684;&#x65F6;&#x95F4;&#x533A;&#x95F4;&#x53EA;&#x80FD;&#x5347;&#x91C7;&#x6837;&#x4E3A;A-MAR&#x3001;A-JUN&#x3001;A-SEP&#x3001;A-DEC</li>
+</ul>
+<h2 id="&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x7ED8;&#x56FE;">&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x7ED8;&#x56FE;</h2>
+<pre><code class="lang-python">close_px_all = pd.read_csv(<span class="hljs-string">&apos;ch09/stock_px.csv&apos;</span>,
+                           parse_dates=<span class="hljs-keyword">True</span>,index_col=<span class="hljs-number">0</span>)
+close_px = close_px_all[[<span class="hljs-string">&apos;AAPL&apos;</span>,<span class="hljs-string">&apos;MSFT&apos;</span>,<span class="hljs-string">&apos;XOM&apos;</span>]]
+close_px = close_px.resample(<span class="hljs-string">&apos;B&apos;</span>).ffill()
+<span class="hljs-comment">#AAPL&#x6BCF;&#x65E5;&#x4EF7;&#x683C;</span>
+close_px[<span class="hljs-string">&apos;AAPL&apos;</span>].plot()
+<span class="hljs-comment">#&#x7ED8;&#x5236;2009&#x5E74;&#x7684;3&#x4E2A;&#x516C;&#x53F8;&#x7684;&#x6BCF;&#x65E5;&#x4EF7;&#x683C;</span>
+close_px.loc[<span class="hljs-string">&apos;2009&apos;</span>].plot()
+<span class="hljs-comment">#&#x82F9;&#x679C;&#x516C;&#x53F8;&#x5728;2011&#x5E74;1&#x6708;&#x5230;3&#x6708;&#x95F4;&#x7684;&#x6BCF;&#x65E5;&#x80A1;&#x4EF7;</span>
+close_px[<span class="hljs-string">&apos;AAPL&apos;</span>].loc[<span class="hljs-string">&apos;01-2011&apos;</span>:<span class="hljs-string">&apos;03-2011&apos;</span>].plot()
+
+<span class="hljs-comment">#&#x91CD;&#x91C7;&#x6837;&#x4E3A;&#x5B63;&#x5EA6;&#x578B;&#x9891;&#x7387;&#x7684;&#x6570;&#x636E;</span>
+appl_q = close_px[<span class="hljs-string">&apos;AAPL&apos;</span>].resample(<span class="hljs-string">&apos;Q-DEC&apos;</span>).ffill()
+<span class="hljs-comment">#&#x82F9;&#x679C;&#x516C;&#x53F8;&#x5728;2009&#x5E74;&#x5230;2011&#x5E74;&#x95F4;&#x6BCF;&#x5B63;&#x5EA6;&#x80A1;&#x4EF7;</span>
+appl_q.loc[<span class="hljs-string">&apos;2009&apos;</span>:].plot()
+</code></pre>
+<h2 id="&#x79FB;&#x52A8;&#x7A97;&#x53E3;&#x51FD;&#x6570;">&#x79FB;&#x52A8;&#x7A97;&#x53E3;&#x51FD;&#x6570;</h2>
+<blockquote>
+<p>&#x5728;&#x79FB;&#x52A8;&#x7A97;&#x53E3;(&#x53EF;&#x4EE5;&#x5E26;&#x6709;&#x6307;&#x6570;&#x8870;&#x51CF;&#x6743;&#x6570;)&#x4E0A;&#x8BA1;&#x7B97;&#x7684;&#x5404;&#x79CD;&#x7EDF;&#x8BA1;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x4E00;&#x7C7B;&#x5E38;&#x89C1;&#x4E8E;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x7684;&#x6570;&#x7EC4;&#x53D8;&#x6362;&#x3002;&#x5C06;&#x5B83;&#x4EEC;&#x79F0;&#x4E3A;&#x79FB;&#x52A8;&#x7A97;&#x53E3;&#x51FD;&#x6570;&#x3002;&#x7A97;&#x53E3;&#x4E0D;&#x5B9A;&#x957F;&#x7684;&#x51FD;&#x6570;(&#x5982;&#x6307;&#x6570;&#x52A0;&#x6743;&#x79FB;&#x52A8;&#x5E73;&#x5747;)&#x3002;&#x8DDF;&#x5176;&#x4ED6;&#x7EDF;&#x8BA1;&#x51FD;&#x6570;&#x4E00;&#x6837;&#xFF0C;&#x79FB;&#x52A8;&#x7A97;&#x53E3;&#x51FD;&#x6570;&#x4E5F;&#x4F1A;&#x81EA;&#x52A8;&#x6392;&#x9664;&#x7F3A;&#x5931;&#x503C;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python">close_px.AAPL.plot()
+<span class="hljs-comment">#rolling&#x7684;&#x53C2;&#x6570;&#x4E3A;&#x7A97;&#x53E3;&#x5927;&#x5C0F;(&#x8868;&#x793A;&#x671F;&#x6570;)</span>
+close_px.AAPL.rolling(<span class="hljs-number">250</span>).mean().plot() <span class="hljs-comment">#AAPL&#x80A1;&#x4EF7;&#x7684;250&#x65E5;&#x5747;&#x7EBF;</span>
+<span class="hljs-comment">#&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#x4E2D;&#x81F3;&#x5C11;&#x6709;&#x591A;&#x5C11;&#x4E2A;&#x975E;NA&#x503C;,min_periods</span>
+<span class="hljs-comment">#AAPL250&#x65E5;&#x6BCF;&#x65E5;&#x56DE;&#x62A5;&#x6807;&#x51C6;&#x5DEE;</span>
+appl_std250 = close_px.AAPL.rolling(<span class="hljs-number">250</span>,min_periods=<span class="hljs-number">10</span>).mean()
+appl_std250.plot()
+<span class="hljs-comment">#&#x8BA1;&#x7B97;&#x6269;&#x5C55;&#x5E73;&#x5747;&#xFF0C;&#x6BCF;&#x80A1;&#x4EF7;60&#x65E5;&#x5747;&#x7EBF;(&#x5BF9;&#x6570;Y&#x8F74;)</span>
+expanding_mean = <span class="hljs-keyword">lambda</span> x: x.rolling(len(x),min_periods=<span class="hljs-number">1</span>).mean()
+close_px.rolling(<span class="hljs-number">60</span>).mean().plot(logy=<span class="hljs-keyword">True</span>)
+</code></pre>
+<p><strong>&#x79FB;&#x52A8;&#x7A97;&#x53E3;&#x548C;&#x6307;&#x6570;&#x52A0;&#x6743;&#x51FD;&#x6570;:</strong></p>
+<ul>
+<li>ewma&#x2014;&#x2014;&#x6307;&#x6570;&#x52A0;&#x6743;&#x79FB;&#x52A8;&#x5E73;&#x5747;</li>
+<li>wemvar&#x3001;ewmstd&#x2014;&#x2014;&#x6307;&#x6570;&#x52A0;&#x6743;&#x79FB;&#x52A8;&#x65B9;&#x5DEE;&#x548C;&#x6807;&#x51C6;&#x5DEE;</li>
+<li>ewmcorr&#x3001;ewmcov&#x2014;&#x2014;&#x6307;&#x6570;&#x52A0;&#x6743;&#x79FB;&#x52A8;&#x76F8;&#x5173;&#x7CFB;&#x6570;&#x548C;&#x534F;&#x65B9;&#x5DEE;</li>
+</ul>
+<h3 id="&#x6307;&#x6570;&#x52A0;&#x6743;&#x5E73;&#x5747;">&#x6307;&#x6570;&#x52A0;&#x6743;&#x5E73;&#x5747;</h3>
+<blockquote>
+<p>&#x53E6;&#x4E00;&#x79CD;&#x4F7F;&#x7528;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;&#x7A97;&#x53E3;&#x53CA;&#x76F8;&#x7B49;&#x6743;&#x6570;&#x89C2;&#x6D4B;&#x503C;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#xFF0C;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x8870;&#x51CF;&#x56E0;&#x5B50;&#x5E38;&#x91CF;&#xFF0C;&#x4EE5;&#x4FBF;&#x8FD1;&#x671F;&#x7684;&#x89C2;&#x6D4B;&#x503C;&#x62E5;&#x6709;&#x66F4;&#x5927;&#x7684;&#x6743;&#x6570;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x7B80;&#x5355;&#x79FB;&#x52A8;&#x5E73;&#x5747;&#x4E0E;&#x6307;&#x6570;&#x52A0;&#x6743;&#x79FB;&#x52A8;&#x5E73;&#x5747;</span>
+fig,axes = plt.subplots(nrows=<span class="hljs-number">2</span>,ncols=<span class="hljs-number">1</span>,sharex=<span class="hljs-keyword">True</span>,
+                        sharey=<span class="hljs-keyword">True</span>,figsize=(<span class="hljs-number">12</span>,<span class="hljs-number">7</span>))
+aapl_px = close_px.AAPL[<span class="hljs-string">&apos;2005&apos;</span>:<span class="hljs-string">&apos;2009&apos;</span>]
+ma60 = aapl_px.rolling(<span class="hljs-number">60</span>,min_periods=<span class="hljs-number">50</span>).mean()
+ewma60 = aapl_px.ewm(span=<span class="hljs-number">60</span>).mean()
+
+aapl_px.plot(style=<span class="hljs-string">&apos;k-&apos;</span>,ax=axes[<span class="hljs-number">0</span>])
+ma60.plot(style=<span class="hljs-string">&apos;k--&apos;</span>,ax=axes[<span class="hljs-number">0</span>])
+aapl_px.plot(style=<span class="hljs-string">&apos;k-&apos;</span>, ax=axes[<span class="hljs-number">1</span>])
+ewma60.plot(style=<span class="hljs-string">&apos;k--&apos;</span>, ax=axes[<span class="hljs-number">1</span>])
+
+axes[<span class="hljs-number">0</span>].set_title(<span class="hljs-string">&apos;Simple MA&apos;</span>)
+axes[<span class="hljs-number">1</span>].set_title(<span class="hljs-string">&apos;Exponentially-weighted MA&apos;</span>)
+</code></pre>
+<h3 id="&#x4E8C;&#x5143;&#x79FB;&#x52A8;&#x7A97;&#x53E3;&#x51FD;&#x6570;">&#x4E8C;&#x5143;&#x79FB;&#x52A8;&#x7A97;&#x53E3;&#x51FD;&#x6570;</h3>
+<blockquote>
+<p>&#x7EDF;&#x8BA1;&#x8BA1;&#x7B97;(&#x5982;&#x76F8;&#x5173;&#x7CFB;&#x6570;&#x3001;&#x534F;&#x65B9;&#x5DEE;)&#x9700;&#x8981;&#x5728;&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x5E8F;&#x5217;&#x4E0A;&#x6267;&#x884C;&#x3002;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x767D;&#x5206;&#x6570;&#x53D8;&#x5316;&#x5E76;&#x4F7F;&#x7528;rolling().corr()&#x7684;&#x65B9;&#x5F0F;&#x7684;&#x5230;&#x8BE5;&#x7ED3;&#x679C;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python">spx_px = close_px_all[<span class="hljs-string">&apos;SPX&apos;</span>]
+spx_rets = spx_px/spx_px.shift(<span class="hljs-number">1</span>)<span class="hljs-number">-1</span>
+returns = close_px.pct_change()
+<span class="hljs-comment">#AAPL 6&#x4E2A;&#x6708;&#x7684;&#x56DE;&#x62A5;&#x4E0E;&#x6807;&#x51C6;&#x666E;&#x5C14;500&#x6307;&#x6570;&#x7684;&#x76F8;&#x5173;&#x7CFB;&#x6570;</span>
+corr = returns.AAPL.rolling(<span class="hljs-number">125</span>,min_periods=<span class="hljs-number">100</span>).corr(spx_rets)
+corr.plot()
+<span class="hljs-comment">#3&#x53EA;&#x80A1;&#x7968;6&#x4E2A;&#x6708;&#x7684;&#x56DE;&#x62A5;&#x4E0E;&#x6807;&#x51C6;&#x666E;&#x5C14;500&#x6307;&#x6570;&#x7684;&#x76F8;&#x5173;&#x7CFB;&#x6570;</span>
+corr = returns.rolling(<span class="hljs-number">125</span>,min_periods=<span class="hljs-number">100</span>).corr(spx_rets)
+corr.plot()
+</code></pre>
+<h3 id="&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#x79FB;&#x52A8;&#x7A97;&#x53E3;&#x51FD;&#x6570;">&#x7528;&#x6237;&#x5B9A;&#x4E49;&#x7684;&#x79FB;&#x52A8;&#x7A97;&#x53E3;&#x51FD;&#x6570;</h3>
+<blockquote>
+<p>rolling().apply()&#x51FD;&#x6570;&#x4F7F;&#x4F60;&#x80FD;&#x591F;&#x5728;&#x79FB;&#x52A8;&#x7A97;&#x53E3;&#x4E0A;&#x5E94;&#x7528;&#x81EA;&#x5DF1;&#x8BBE;&#x8BA1;&#x7684;&#x6570;&#x7EC4;&#x51FD;&#x6570;&#x3002;&#x552F;&#x4E00;&#x7684;&#x8981;&#x6C42;&#x662F;&#xFF1A;&#x8BE5;&#x51FD;&#x6570;&#x8981;&#x80FD;&#x4ECE;&#x6570;&#x7EC4;&#x7684;&#x5404;&#x4E2A;&#x7247;&#x6BB5;&#x4E2D;&#x4EA7;&#x751F;&#x5355;&#x4E2A;&#x503C;(&#x5373;&#x7EA6;&#x7B80;)</p>
+</blockquote>
+<pre><code class="lang-python">score_at_2percent = <span class="hljs-keyword">lambda</span> x: percentileofscore(x, <span class="hljs-number">0.02</span>)
+result = returns.AAPL.rolling(<span class="hljs-number">250</span>).apply(score_at_2percent)
+<span class="hljs-comment">#AAPL 2%&#x56DE;&#x62A5;&#x7387;&#x7684;&#x767E;&#x5206;&#x7B49;&#x7EA7;(&#x4E00;&#x5E74;&#x7A97;&#x53E3;&#x671F;)</span>
+result.plot()
+</code></pre>
+<h2 id="&#x6027;&#x80FD;&#x548C;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x65B9;&#x9762;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;">&#x6027;&#x80FD;&#x548C;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x65B9;&#x9762;&#x7684;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h2>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ch09.html" class="navigation navigation-prev " aria-label="Previous page: 第9章数据聚合与分组运算">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ch11.html" class="navigation navigation-next " aria-label="Next page: 第11章金融和经济数据应用">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第10章时间序列","level":"1.9","depth":1,"next":{"title":"第11章金融和经济数据应用","level":"1.10","depth":1,"path":"ch11.md","ref":"ch11.md","articles":[]},"previous":{"title":"第9章数据聚合与分组运算","level":"1.8","depth":1,"path":"ch09.md","ref":"ch09.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch10.md","mtime":"2018-12-26T13:56:38.874Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-26T13:57:43.570Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

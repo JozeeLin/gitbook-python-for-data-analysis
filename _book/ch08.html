@@ -1,0 +1,546 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第8章绘图和可视化 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ch09.html" />
+    
+    
+    <link rel="prev" href="ch07.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="ch02.html">
+            
+                <a href="ch02.html">
+            
+                    
+                    第2章Pandas DataFrame引言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="ch04.html">
+            
+                <a href="ch04.html">
+            
+                    
+                    第4章Numpy基础：数组和矢量计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="ch05.html">
+            
+                <a href="ch05.html">
+            
+                    
+                    第5章Pandas 入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="ch06.html">
+            
+                <a href="ch06.html">
+            
+                    
+                    第6章数据加载、存储与文件格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="ch07.html">
+            
+                <a href="ch07.html">
+            
+                    
+                    第7章数据规整化/清理、转换、合并、重塑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="ch08.html">
+            
+                <a href="ch08.html">
+            
+                    
+                    第8章绘图和可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="ch09.html">
+            
+                <a href="ch09.html">
+            
+                    
+                    第9章数据聚合与分组运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="ch10.html">
+            
+                <a href="ch10.html">
+            
+                    
+                    第10章时间序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="ch11.html">
+            
+                <a href="ch11.html">
+            
+                    
+                    第11章金融和经济数据应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="ch12.html">
+            
+                <a href="ch12.html">
+            
+                    
+                    第12章NumPy高级应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="appendixA.html">
+            
+                <a href="appendixA.html">
+            
+                    
+                    附录A Python语言精要
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >第8章绘图和可视化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B2C;&#x516B;&#x7AE0;-&#x7ED8;&#x56FE;&#x548C;&#x53EF;&#x89C6;&#x5316;">&#x7B2C;&#x516B;&#x7AE0; &#x7ED8;&#x56FE;&#x548C;&#x53EF;&#x89C6;&#x5316;</h1>
+<p>[TOC]</p>
+<h2 id="matplotlib-api-&#x5165;&#x95E8;">matplotlib API &#x5165;&#x95E8;</h2>
+<h3 id="figure&#x548C;subplot">Figure&#x548C;subplot</h3>
+<pre><code class="lang-python">fig = plt.figure()
+ax1 = fig.add_subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)
+ax2 = fig.add_subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>)
+ax3 = fig.add_subplot(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)
+plt.plot(randn(<span class="hljs-number">50</span>).cumsum(),<span class="hljs-string">&apos;k--&apos;</span>)
+_ = ax1.hist(randn(<span class="hljs-number">100</span>), bins=<span class="hljs-number">20</span>, color=<span class="hljs-string">&apos;k&apos;</span>, alpha=<span class="hljs-number">0.3</span>)
+ax2.scatter(np.arange(<span class="hljs-number">30</span>),np.arange(<span class="hljs-number">30</span>)+<span class="hljs-number">3</span>*randn(<span class="hljs-number">30</span>))
+
+<span class="hljs-comment">#&#x5728;&#x4E00;&#x4E2A;&#x753B;&#x5E03;&#x4E0A;&#x751F;&#x6210;2x3&#x4E2A;&#x5C0F;&#x56FE;&#x50CF;</span>
+fig,axes = plt.subplots(<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,sharex=<span class="hljs-keyword">True</span>,sharey=<span class="hljs-keyword">True</span>)
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">2</span>):
+    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">2</span>):
+        axes[i,j].hist(randn(<span class="hljs-number">500</span>), bins=<span class="hljs-number">50</span>, color=<span class="hljs-string">&apos;k&apos;</span>, alpha=<span class="hljs-number">0.5</span>)
+plt.subplots_adjust(wspace=<span class="hljs-number">0</span>,hspace=<span class="hljs-number">0</span>)
+
+<span class="hljs-comment">#color&#xFF0C;linestyle&#xFF0C;marker</span>
+plt.plot(randn(<span class="hljs-number">30</span>).cumsum(),color=<span class="hljs-string">&apos;k&apos;</span>,linestyle=<span class="hljs-string">&apos;dashed&apos;</span>,marker=<span class="hljs-string">&apos;o&apos;</span>)
+plt.plot(randn(<span class="hljs-number">30</span>).cumsum(),<span class="hljs-string">&apos;k-o&apos;</span>)<span class="hljs-comment">#&#x8DDF;&#x4E0A;&#x9762;&#x8BED;&#x53E5;&#x7B49;&#x6548;</span>
+
+<span class="hljs-comment">#drawstyle&#xFF0C;label&#xFF0C;legend</span>
+plt.plot(data,<span class="hljs-string">&apos;k-&apos;</span>,drawstyle=<span class="hljs-string">&apos;steps-post&apos;</span>,label=<span class="hljs-string">&apos;steps-post&apos;</span>)
+plt.legend(loc=<span class="hljs-string">&apos;best&apos;</span>)
+
+<span class="hljs-comment">#xticks&#xFF0C;xticklabels&#xFF0C;title&#xFF0C;xlabel</span>
+fig = plt.figure()
+ax = fig.add_subplot(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)
+ax.plot(randn(<span class="hljs-number">1000</span>).cumsum())
+ticks = ax.set_xticks([<span class="hljs-number">0</span>,<span class="hljs-number">250</span>,<span class="hljs-number">500</span>,<span class="hljs-number">750</span>,<span class="hljs-number">1000</span>])
+labels = ax.set_xticklabels([<span class="hljs-string">&apos;one&apos;</span>,<span class="hljs-string">&apos;two&apos;</span>,<span class="hljs-string">&apos;three&apos;</span>,<span class="hljs-string">&apos;four&apos;</span>,<span class="hljs-string">&apos;five&apos;</span>],
+                           rotation=<span class="hljs-number">30</span>,fontsize=<span class="hljs-string">&apos;small&apos;</span>)
+ax.set_title(<span class="hljs-string">&apos;My first matplotlib plot&apos;</span>)
+ax.set_xlabel(<span class="hljs-string">&apos;States&apos;</span>)
+
+<span class="hljs-comment">#annotate</span>
+fig = plt.figure()
+ax = fig.add_subplot(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)
+data = pd.read_csv(<span class="hljs-string">&apos;ch08/spx.csv&apos;</span>, index_col=<span class="hljs-number">0</span>, parse_dates=<span class="hljs-keyword">True</span>)
+spx = data[<span class="hljs-string">&apos;SPX&apos;</span>]
+spx.plot(ax=ax, style=<span class="hljs-string">&apos;k-&apos;</span>)
+
+crisis_data = [
+    (datetime(<span class="hljs-number">2007</span>,<span class="hljs-number">10</span>,<span class="hljs-number">11</span>),<span class="hljs-string">&apos;Peak of bull market&apos;</span>),
+    (datetime(<span class="hljs-number">2008</span>,<span class="hljs-number">3</span>,<span class="hljs-number">12</span>),<span class="hljs-string">&apos;Bear Stearns Fails&apos;</span>),
+    (datetime(<span class="hljs-number">2008</span>,<span class="hljs-number">9</span>,<span class="hljs-number">15</span>),<span class="hljs-string">&apos;Lehman Bankruptcy&apos;</span>)
+]
+
+<span class="hljs-keyword">for</span> date,label <span class="hljs-keyword">in</span> crisis_data:
+    ax.annotate(label, xy=(date, spx[date]+<span class="hljs-number">50</span>),
+               xytext=(date, spx[date]+<span class="hljs-number">200</span>),
+               arrowprops={<span class="hljs-string">&apos;facecolor&apos;</span>: <span class="hljs-string">&apos;black&apos;</span>},
+               horizontalalignment=<span class="hljs-string">&apos;left&apos;</span>,verticalalignment=<span class="hljs-string">&apos;top&apos;</span>)
+ax.set_xlim([<span class="hljs-string">&apos;1/1/2007&apos;</span>,<span class="hljs-string">&apos;1/1/2011&apos;</span>])
+ax.set_ylim([<span class="hljs-number">600</span>,<span class="hljs-number">1800</span>])
+ax.set_title(<span class="hljs-string">&apos;Important dates in 2008-2009 financial crisis&apos;</span>)
+
+<span class="hljs-comment">#Rectangle,Circle,add_patch</span>
+fig = plt.figure()
+ax =fig.add_subplot(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)
+rect = plt.Rectangle((<span class="hljs-number">0.2</span>,<span class="hljs-number">0.75</span>),<span class="hljs-number">0.4</span>,<span class="hljs-number">0.15</span>,color=<span class="hljs-string">&apos;k&apos;</span>,alpha=<span class="hljs-number">0.3</span>)
+circ = plt.Circle((<span class="hljs-number">0.7</span>,<span class="hljs-number">0.2</span>),<span class="hljs-number">0.15</span>,color=<span class="hljs-string">&apos;b&apos;</span>,alpha=<span class="hljs-number">0.3</span>)
+pgon = plt.Polygon([[<span class="hljs-number">0.15</span>,<span class="hljs-number">0.15</span>],[<span class="hljs-number">0.35</span>,<span class="hljs-number">0.4</span>],[<span class="hljs-number">0.2</span>,<span class="hljs-number">0.6</span>]],color=<span class="hljs-string">&apos;g&apos;</span>,alpha=<span class="hljs-number">0.5</span>)
+ax.add_patch(rect)
+ax.add_patch(circ)
+ax.add_patch(pgon)
+</code></pre>
+<p><strong>pyplot.subplots&#x7684;&#x53C2;&#x6570;:</strong></p>
+<p>nrows&#x2014;&#x2014;subplot&#x7684;&#x884C;&#x6570;</p>
+<p>ncols&#x2014;&#x2014;subplot&#x7684;&#x5217;&#x6570;</p>
+<p>sharex&#x2014;&#x2014;&#x6240;&#x6709;subplot&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;X&#x8F74;&#x523B;&#x5EA6;(&#x8C03;&#x8282;xlim&#x5C06;&#x4F1A;&#x5F71;&#x54CD;&#x6240;&#x6709;&#x7684;subplot)</p>
+<p>sharey&#x2014;&#x2014;&#x6240;&#x6709;subplot&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684;Y&#x8F74;&#x523B;&#x5EA6;(&#x8C03;&#x8282;ylim&#x5C06;&#x4F1A;&#x5F71;&#x54CD;&#x6240;&#x6709;&#x7684;subplot)</p>
+<p>subplot_kw&#x2014;&#x2014;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x5404;subplot&#x7684;&#x5173;&#x952E;&#x5B57;&#x5B57;&#x5178;</p>
+<p>**fig_kw&#x2014;&#x2014;&#x521B;&#x5EFA;figure&#x65F6;&#x7684;&#x5176;&#x4ED6;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x5982;plt.subplots(2,2,figsize=(8,6))</p>
+<h2 id="pandas&#x4E2D;&#x7684;&#x7ED8;&#x56FE;&#x51FD;&#x6570;">pandas&#x4E2D;&#x7684;&#x7ED8;&#x56FE;&#x51FD;&#x6570;</h2>
+<h3 id="&#x7EBF;&#x6027;&#x56FE;">&#x7EBF;&#x6027;&#x56FE;</h3>
+<blockquote>
+<p>Series&#x3001;DataFrame&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x751F;&#x6210;&#x5404;&#x7C7B;&#x56FE;&#x8868;&#x7684;plot&#x65B9;&#x6CD5;&#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5B83;&#x4EEC;&#x751F;&#x6210;&#x7684;&#x662F;&#x7EBF;&#x578B;&#x56FE;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment">#Series.plot</span>
+s = Series(np.random.randn(<span class="hljs-number">10</span>).cumsum(), index=np.arange(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">10</span>))
+s.plot()
+<span class="hljs-comment">#DataFrame.plot</span>
+df = DataFrame(np.random.randn(<span class="hljs-number">10</span>,<span class="hljs-number">4</span>).cumsum(<span class="hljs-number">0</span>),columns=[<span class="hljs-string">&apos;A&apos;</span>,<span class="hljs-string">&apos;B&apos;</span>,<span class="hljs-string">&apos;C&apos;</span>,<span class="hljs-string">&apos;D&apos;</span>],
+              index=np.arange(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">10</span>))
+df.plot()
+</code></pre>
+<p><strong>Series.plot&#x7684;&#x53C2;&#x6570;&#xFF1A;</strong></p>
+<ul>
+<li>label &#x7528;&#x4E8E;&#x56FE;&#x4F8B;&#x7684;&#x6807;&#x7B7E;</li>
+<li>ax&#x2014;&#x2014;&#x8981;&#x5728;&#x5176;&#x4E0A;&#x8FDB;&#x884C;&#x7ED8;&#x5236;&#x7684;matplotlib subplot&#x5BF9;&#x8C61;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x5F53;&#x524D;matplotlib subplot</li>
+<li>style&#x2014;&#x2014;&#x5C06;&#x8981;&#x4F20;&#x7ED9;matplotlib&#x7684;&#x98CE;&#x683C;&#x5B57;&#x7B26;&#x4E32;(&#x5982;&apos;ko--&apos;)</li>
+<li>alpha&#x2014;&#x2014;&#x56FE;&#x8868;&#x7684;&#x586B;&#x5145;&#x4E0D;&#x900F;&#x660E;&#x5EA6;(0~1)</li>
+<li>kind&#x2014;&#x2014;&#x53EF;&#x4EE5;&#x662F;&apos;line&apos;&#x3001;&#x2018;bar&apos;&#x3001;&apos;barh&apos;,&apos;kde&apos;</li>
+<li>logy&#x2014;&#x2014;&#x5728;Y&#x8F74;&#x4E0A;&#x4F7F;&#x7528;&#x5BF9;&#x6570;&#x6807;&#x5C3A;</li>
+<li>use_index&#x2014;&#x2014;&#x5C06;&#x5BF9;&#x8C61;&#x7684;&#x7D22;&#x5F15;&#x7528;&#x4F5C;&#x523B;&#x5EA6;&#x6807;&#x7B7E;</li>
+<li>rot&#x2014;&#x2014;&#x65CB;&#x8F6C;&#x523B;&#x5EA6;&#x6807;&#x7B7E;(0~360)</li>
+<li>xticks&#x2014;&#x2014;&#x7528;&#x505A;X&#x8F74;&#x523B;&#x5EA6;&#x7684;&#x503C;</li>
+<li>yticks&#x2014;&#x2014;&#x7528;&#x505A;Y&#x8F74;&#x523B;&#x5EA6;&#x7684;&#x503C;</li>
+<li>xlim&#x2014;&#x2014;X&#x8F74;&#x7684;&#x754C;&#x9650;([0,10])</li>
+<li>ylim&#x2014;&#x2014;Y&#x8F74;&#x7684;&#x754C;&#x9650;</li>
+<li>grid&#x2014;&#x2014;&#x663E;&#x793A;&#x8F74;&#x7F51;&#x683C;&#x7EBF;(&#x9ED8;&#x8BA4;&#x6253;&#x5F00;)</li>
+</ul>
+<p><strong>DataFrame.plot&#x7684;&#x53C2;&#x6570;&#xFF1A;</strong></p>
+<ul>
+<li>subplots&#x2014;&#x2014;&#x5C06;&#x5404;&#x4E2A;DataFrame&#x5217;&#x7ED8;&#x5236;&#x5230;&#x5355;&#x72EC;&#x7684;subplot&#x4E2D;</li>
+<li>sharex&#x2014;&#x2014;&#x5982;&#x679C;subplots=True&#xFF0C;&#x5219;&#x5171;&#x7528;&#x4E00;&#x4E2A;X&#x8F74;&#xFF0C;&#x5305;&#x62EC;&#x523B;&#x5EA6;&#x548C;&#x754C;&#x9650;</li>
+<li>sharey&#x2014;&#x2014;&#x5982;&#x679C;subplots=True&#xFF0C;&#x5219;&#x5171;&#x7528;&#x4E00;&#x4E2A;Y&#x8F74;</li>
+<li>figsize&#x2014;&#x2014;&#x8868;&#x793A;&#x56FE;&#x50CF;&#x5927;&#x5C0F;&#x7684;&#x5143;&#x7EC4;</li>
+<li>title&#x2014;&#x2014;&#x8868;&#x793A;&#x56FE;&#x50CF;&#x6807;&#x9898;&#x7684;&#x5B57;&#x7B26;&#x4E32;</li>
+<li>legend&#x2014;&#x2014;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;subplot&#x56FE;&#x4F8B;</li>
+<li>sort_columns&#x2014;&#x2014;&#x4EE5;&#x5B57;&#x6BCD;&#x7684;&#x987A;&#x5E8F;&#x7ED8;&#x5236;&#x5404;&#x5217;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x987A;&#x5E8F;</li>
+</ul>
+<h3 id="&#x67F1;&#x72B6;&#x56FE;">&#x67F1;&#x72B6;&#x56FE;</h3>
+<blockquote>
+<p>bar&#x2014;&#x5782;&#x76F4;&#x67F1;&#x72B6;&#x56FE;&#xFF0C;barh&#x2014;&#x6C34;&#x5E73;&#x67F1;&#x72B6;&#x56FE;&#xFF0C;&#x7D22;&#x5F15;&#x4F1A;&#x7528;&#x505A;X(bar)&#x3001;Y(barh)&#x7684;&#x523B;&#x5EA6;</p>
+</blockquote>
+<pre><code class="lang-python">fig,axes = plt.subplots(<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)
+data = Series(np.random.rand(<span class="hljs-number">16</span>), index=list(<span class="hljs-string">&apos;abcdefghijklmnop&apos;</span>))
+data.plot(kind=<span class="hljs-string">&apos;bar&apos;</span>,ax=axes[<span class="hljs-number">0</span>],color=<span class="hljs-string">&apos;k&apos;</span>,alpha=<span class="hljs-number">0.7</span>)
+data.plot(kind=<span class="hljs-string">&apos;barh&apos;</span>,ax=axes[<span class="hljs-number">1</span>],color=<span class="hljs-string">&apos;k&apos;</span>,alpha=<span class="hljs-number">0.7</span>)
+
+<span class="hljs-comment">#&#x5806;&#x53E0;&#x67F1;&#x72B6;&#x56FE;</span>
+df = DataFrame(np.random.randn(<span class="hljs-number">6</span>,<span class="hljs-number">4</span>),
+              index=[<span class="hljs-string">&apos;one&apos;</span>,<span class="hljs-string">&apos;two&apos;</span>,<span class="hljs-string">&apos;three&apos;</span>,<span class="hljs-string">&apos;four&apos;</span>,<span class="hljs-string">&apos;five&apos;</span>,<span class="hljs-string">&apos;six&apos;</span>],
+              columns=pd.Index([<span class="hljs-string">&apos;A&apos;</span>,<span class="hljs-string">&apos;B&apos;</span>,<span class="hljs-string">&apos;C&apos;</span>,<span class="hljs-string">&apos;D&apos;</span>],name=<span class="hljs-string">&apos;Genus&apos;</span>))
+df.plot(kind=<span class="hljs-string">&apos;bar&apos;</span>,ylim=(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>))
+df.plot(kind=<span class="hljs-string">&apos;barh&apos;</span>,stacked=<span class="hljs-keyword">True</span>, alpha=<span class="hljs-number">0.5</span>,xlim=(<span class="hljs-number">0</span>,<span class="hljs-number">2</span>))
+
+tips = pd.read_csv(<span class="hljs-string">&apos;ch08/tips.csv&apos;</span>)
+party_counts = pd.crosstab(tips[<span class="hljs-string">&apos;day&apos;</span>],tips[<span class="hljs-string">&apos;size&apos;</span>])
+party_counts = party_counts.loc[:,<span class="hljs-number">2</span>:<span class="hljs-number">5</span>]
+party_pcts = party_counts.div(party_counts.sum(<span class="hljs-number">1</span>).astype(float), axis=<span class="hljs-number">0</span>)
+party_pcts.plot(kind=<span class="hljs-string">&apos;bar&apos;</span>,stacked=<span class="hljs-keyword">True</span>)
+</code></pre>
+<h3 id="&#x76F4;&#x65B9;&#x56FE;&#x548C;&#x5BC6;&#x5EA6;&#x56FE;">&#x76F4;&#x65B9;&#x56FE;&#x548C;&#x5BC6;&#x5EA6;&#x56FE;</h3>
+<blockquote>
+<p>&#x76F4;&#x65B9;&#x56FE;(hist)&#x662F;&#x4E00;&#x79CD;&#x53EF;&#x4EE5;&#x5BF9;&#x503C;&#x9891;&#x7387;&#x8FDB;&#x884C;&#x79BB;&#x6563;&#x5316;&#x663E;&#x793A;&#x7684;&#x67F1;&#x72B6;&#x56FE;&#x3002;&#x6570;&#x636E;&#x70B9;&#x88AB;&#x62C6;&#x5206;&#x5230;&#x79BB;&#x6563;&#x7684;&#x3001;&#x95F4;&#x9694;&#x5747;&#x5300;&#x7684;&#x9762;&#x5143;&#x4E2D;&#xFF0C;&#x7ED8;&#x5236;&#x7684;&#x662F;&#x5404;&#x9762;&#x5143;&#x4E2D;&#x6570;&#x636E;&#x70B9;&#x7684;&#x6570;&#x91CF;&#x3002;</p>
+<p>&#x5BC6;&#x5EA6;&#x56FE;(&#x4E5F;&#x79F0;&#x4F5C;KDE&#xFF0C;&#x6838;&#x5BC6;&#x5EA6;&#x4F30;&#x8BA1;)&#xFF0C;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&quot;&#x53EF;&#x80FD;&#x4F1A;&#x4EA7;&#x751F;&#x89C2;&#x6D4B;&#x6570;&#x636E;&#x7684;&#x8FDE;&#x7EED;&#x6982;&#x7387;&#x5206;&#x5E03;&#x7684;&#x4F30;&#x8BA1;&quot;&#x800C;&#x4EA7;&#x751F;&#x7684;&#x3002;&#x4E00;&#x822C;&#x7684;&#x8FC7;&#x7A0B;&#x662F;&#x5C06;&#x8BE5;&#x5206;&#x5E03;&#x8FD1;&#x4F3C;&#x4E3A;&#x4E00;&#x7EC4;&#x6838;(&#x8BF8;&#x5982;&#x6B63;&#x6001;(&#x9AD8;&#x65AF;)&#x5206;&#x5E03;)</p>
+</blockquote>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x5C0F;&#x8D39;&#x767E;&#x5206;&#x6BD4;&#x76F4;&#x65B9;&#x56FE;</span>
+tips[<span class="hljs-string">&apos;tip_pct&apos;</span>] = tips[<span class="hljs-string">&apos;tip&apos;</span>]/tips[<span class="hljs-string">&apos;total_bill&apos;</span>]
+tips[<span class="hljs-string">&apos;tip_pct&apos;</span>].hist(bins=<span class="hljs-number">50</span>)
+
+<span class="hljs-comment">#&#x6838;&#x5BC6;&#x5EA6;&#x56FE;</span>
+tips[<span class="hljs-string">&apos;tip_pct&apos;</span>].plot(kind=<span class="hljs-string">&apos;kde&apos;</span>)
+
+<span class="hljs-comment">#&#x901A;&#x5E38;&#x76F4;&#x65B9;&#x56FE;&#x548C;&#x6838;&#x5BC6;&#x5EA6;&#x56FE;&#x90FD;&#x662F;&#x4E00;&#x8D77;&#x51FA;&#x73B0;&#x7684;</span>
+comp1 = np.random.normal(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,size=<span class="hljs-number">200</span>)
+comp2 = np.random.normal(<span class="hljs-number">10</span>,<span class="hljs-number">2</span>,size=<span class="hljs-number">200</span>)
+values=Series(np.concatenate([comp1,comp2]))
+values.plot(kind=<span class="hljs-string">&apos;kde&apos;</span>,style=<span class="hljs-string">&apos;k--&apos;</span>)
+values.hist(bins=<span class="hljs-number">100</span>,alpha=<span class="hljs-number">0.3</span>,color=<span class="hljs-string">&apos;k&apos;</span>,normed=<span class="hljs-keyword">True</span>)
+</code></pre>
+<h3 id="&#x6563;&#x5E03;&#x56FE;&#x6563;&#x70B9;&#x56FE;">&#x6563;&#x5E03;&#x56FE;(&#x6563;&#x70B9;&#x56FE;)</h3>
+<blockquote>
+<p>&#x6563;&#x70B9;&#x56FE;&#x662F;&#x89C2;&#x5BDF;&#x4E24;&#x4E2A;&#x4E00;&#x7EF4;&#x6570;&#x636E;&#x5E8F;&#x5217;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x7684;&#x6709;&#x6548;&#x624B;&#x6BB5;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-python">macro = pd.read_csv(<span class="hljs-string">&apos;ch08/macrodata.csv&apos;</span>)
+data = macro[[<span class="hljs-string">&apos;cpi&apos;</span>,<span class="hljs-string">&apos;m1&apos;</span>,<span class="hljs-string">&apos;tbilrate&apos;</span>,<span class="hljs-string">&apos;unemp&apos;</span>]]
+trans_data = np.log(data).diff().dropna()
+trans_data[<span class="hljs-number">-5</span>:]
+plt.scatter(trans_data[<span class="hljs-string">&apos;m1&apos;</span>],trans_data[<span class="hljs-string">&apos;unemp&apos;</span>])
+plt.title(<span class="hljs-string">&apos;Changes in log %s vs. log %s&apos;</span> % (<span class="hljs-string">&apos;m1&apos;</span>,<span class="hljs-string">&apos;unemp&apos;</span>))
+
+<span class="hljs-comment">#&#x6563;&#x70B9;&#x56FE;&#x77E9;&#x9635;&#xFF0C;&#x753B;&#x51FA;DF&#x6570;&#x636E;&#x96C6;&#x4E24;&#x4E24;&#x5217;&#x4E4B;&#x95F4;&#x7684;&#x6563;&#x70B9;&#x56FE;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x5BF9;&#x89D2;&#x7EBF;&#x4E0A;&#x663E;&#x793A;&#x5404;&#x5217;&#x7684;&#x6838;&#x5BC6;&#x5EA6;&#x56FE;</span>
+pd.plotting.scatter_matrix(trans_data, diagonal=<span class="hljs-string">&apos;kde&apos;</span>,color=<span class="hljs-string">&apos;k&apos;</span>,alpha=<span class="hljs-number">0.3</span>)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ch07.html" class="navigation navigation-prev " aria-label="Previous page: 第7章数据规整化/清理、转换、合并、重塑">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ch09.html" class="navigation navigation-next " aria-label="Next page: 第9章数据聚合与分组运算">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第8章绘图和可视化","level":"1.7","depth":1,"next":{"title":"第9章数据聚合与分组运算","level":"1.8","depth":1,"path":"ch09.md","ref":"ch09.md","articles":[]},"previous":{"title":"第7章数据规整化/清理、转换、合并、重塑","level":"1.6","depth":1,"path":"ch07.md","ref":"ch07.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ch08.md","mtime":"2018-12-26T13:56:19.260Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-26T13:57:43.570Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
